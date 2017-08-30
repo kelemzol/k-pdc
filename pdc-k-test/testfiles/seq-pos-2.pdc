@@ -1,0 +1,9 @@
+rule seq-pos-2 (A, B) {
+	start instantly
+	seq {
+	    A -> B : REQ
+	    B -> A : RES
+	}
+}
+
+main-rule seq-pos-2

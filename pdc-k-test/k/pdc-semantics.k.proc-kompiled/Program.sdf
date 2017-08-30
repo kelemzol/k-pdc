@@ -1,0 +1,757 @@
+module Program
+
+imports Common
+imports KBuiltinsBasic
+exports
+
+context-free syntax
+context-free priorities
+{
+    "~Int" Int -> Int {cons("Int1255Syn")}
+} > { left:
+    Int "^Int" Int -> Int {left, cons("Int170Syn")}
+} > { left:
+    Int "*Int" Int -> Int {left, cons("Int165Syn")}
+    Int "/Int" Int -> Int {left, cons("Int1220Syn")}
+    Int "%Int" Int -> Int {left, cons("Int1326Syn")}
+    Int "divInt" Int -> Int {left, cons("Int1429Syn")}
+    Int "modInt" Int -> Int {left, cons("Int166Syn")}
+} > { left:
+    Int "+Int" Int -> Int {left, cons("Int1346Syn")}
+    Int "-Int" Int -> Int {left, cons("Int1279Syn")}
+} > { left:
+    Int ">>Int" Int -> Int {left, cons("Int1227Syn")}
+    Int "<<Int" Int -> Int {left, cons("Int1249Syn")}
+} > { left:
+    Int "&Int" Int -> Int {left, cons("Int1252Syn")}
+} > { left:
+    Int "xorInt" Int -> Int {left, cons("Int194Syn")}
+} > { left:
+    Int "|Int" Int -> Int {left, cons("Int192Syn")}
+}
+
+context-free priorities
+{
+    "notBool" Bool -> Bool {cons("Bool1367Syn")}
+} > {
+    Bool "andBool" Bool -> Bool {left, cons("Bool1476Syn")}
+    K "andThenBool" K -> Bool {left, cons("Bool1353Syn")}
+} > {
+    Bool "xorBool" Bool -> Bool {left, cons("Bool1225Syn")}
+} > {
+    Bool "orBool" Bool -> Bool {left, cons("Bool1337Syn")}
+    K "orElseBool" K -> Bool {left, cons("Bool1473Syn")}
+} > {
+    Bool "impliesBool" Bool -> Bool {left, cons("Bool1468Syn")}
+} > { left:
+    Bool "==Bool" Bool -> Bool {left, cons("Bool1383Syn")}
+    Bool "=/=Bool" Bool -> Bool {left, cons("Bool1403Syn")}
+}
+
+context-free priorities
+{
+    "--Float" Float -> Float {cons("Float1343Syn")}
+} > {
+    Float "^Float" Float -> Float {left, cons("Float19Syn")}
+} > { left:
+    Float "*Float" Float -> Float {left, cons("Float1229Syn")}
+    Float "/Float" Float -> Float {left, cons("Float163Syn")}
+    Float "%Float" Float -> Float {left, cons("Float1424Syn")}
+} > { left:
+    Float "+Float" Float -> Float {left, cons("Float1487Syn")}
+    Float "-Float" Float -> Float {left, cons("Float1344Syn")}
+}
+
+context-free priorities
+{ left:
+    K "==K" K -> Bool {left, cons("Bool1483Syn")}
+    K "=/=K" K -> Bool {left, cons("Bool188Syn")}
+}
+
+context-free priorities
+{
+    K "==K" K -> Bool {left, cons("Bool1483Syn")}
+    Bag "==Bag" Bag -> Bool {left, cons("Bool134Syn")}
+    Bag "=/=Bag" Bag -> Bool {left, cons("Bool1307Syn")}
+    K "=/=K" K -> Bool {left, cons("Bool188Syn")}
+} > {
+    Bool "impliesBool" Bool -> Bool {left, cons("Bool1468Syn")}
+    "notBool" Bool -> Bool {cons("Bool1367Syn")}
+    K "andThenBool" K -> Bool {left, cons("Bool1353Syn")}
+    Bool "orBool" Bool -> Bool {left, cons("Bool1337Syn")}
+    K "orElseBool" K -> Bool {left, cons("Bool1473Syn")}
+    Bool "xorBool" Bool -> Bool {left, cons("Bool1225Syn")}
+    Bool "andBool" Bool -> Bool {left, cons("Bool1476Syn")}
+}
+
+context-free priorities
+{ left:
+    Bag "==Bag" Bag -> Bool {left, cons("Bool134Syn")}
+    Bag "=/=Bag" Bag -> Bool {left, cons("Bool1307Syn")}
+}
+
+context-free priorities
+{
+    K "|->" K -> Map {cons("Map173Syn")}
+} > {
+    Map Map -> Map {left, cons("Map1242Syn")}
+}
+
+context-free start-symbols
+Set MInt K String PDdCModuleEntry EntryList KList RuleParamList PDdCId RuleBody Int PDdCMSGList Entry PDdCMSG Bool Char Stream List DzInt DzString DzBool PDdCIdList Bag PDdCModuleEntryList KResult KLabel Float RuleParams IOError PDdCRule ErrorCode Id KItem Map PDdCModule DzFloat K
+context-free syntax
+    "#buffer" "(" InsertDzK ")" -> Stream {cons("Stream10Syn")}
+    "#read" "(" InsertDzInt "," InsertDzInt ")" -> KItem {cons("KItem12Syn")}
+    K "inKList" KList -> Bool {cons("Bool14Syn")}
+    "findChar" "(" InsertDzString "," InsertDzString "," InsertDzInt ")" -> Int {cons("Int15Syn")}
+    "@LC" "(" InsertDzId ")" -> PDdCId {cons("PDdCId17Syn")}
+    "#EISDIR" -> IOError {cons("IOError18Syn")}
+    "removeAll" "(" InsertDzMap "," InsertDzSet ")" -> Map {cons("Map122Syn")}
+    "sqrtFloat" "(" InsertDzFloat ")" -> Float {cons("Float124Syn")}
+    Map "[" InsertDzK "<-" InsertDzK "]" -> Map {cons("Map123Syn")}
+    Entry EntryList -> EntryList {right, cons("EntryList127Syn")}
+    "sinFloat" "(" InsertDzFloat ")" -> Float {cons("Float126Syn")}
+    Map "=Map" Map -> Bool {cons("Bool125Syn")}
+    String "<String" String -> Bool {cons("Bool129Syn")}
+    Set "=Set" Set -> Bool {cons("Bool128Syn")}
+    "roundFloat" "(" InsertDzFloat "," InsertDzInt "," InsertDzInt ")" -> Float {cons("Float132Syn")}
+    "values" "(" InsertDzMap ")" -> List {cons("List130Syn")}
+    PDdCMSG "=/=PDCMSG" PDdCMSG -> Bool {cons("Bool133Syn")}
+    ".List" -> List {cons("List135Syn")}
+    "@NotFindMainRule" -> ErrorCode {cons("ErrorCode136Syn")}
+    "#EBADF" -> IOError {cons("IOError137Syn")}
+    "#ostream" "(" InsertDzInt ")" -> Stream {cons("Stream138Syn")}
+    PDdCId "," RuleParamList -> RuleParamList {right, cons("RuleParamList139Syn")}
+    "KLabel2String" "(" InsertDzKLabel ")" -> String {cons("String140Syn")}
+    "pvs" "(" InsertDzPDdCIdList ")" -> PDdCIdList {cons("PDdCIdList143Syn")}
+    "isBuiltin" "(" InsertDzK ")" -> Bool {cons("Bool142Syn")}
+    "#stderr" -> Int {cons("Int145Syn")}
+    "signFloat" "(" InsertDzFloat ")" -> Bool {cons("Bool144Syn")}
+    "isKResult" "(" InsertDzKItem ")" -> Bool {cons("Bool146Syn")}
+    "exponentFloat" "(" InsertDzFloat ")" -> Int {cons("Int147Syn")}
+    Map "-Map" Map -> Map {cons("Map148Syn")}
+    "minValueFloat" "(" InsertDzInt "," InsertDzInt ")" -> Float {cons("Float149Syn")}
+    "categoryChar" "(" InsertDzString ")" -> String {cons("String150Syn")}
+    "substrString" "(" InsertDzString "," InsertDzInt "," InsertDzInt ")" -> String {cons("String152Syn")}
+    Int "dividesInt" Int -> Bool {cons("Bool153Syn")}
+    "String2KLabel" "(" InsertDzString ")" -> KLabel {cons("KLabel154Syn")}
+    "#parseInput" "(" InsertDzString "," InsertDzString ")" -> Stream {cons("Stream156Syn")}
+    PDdCMSG "==PDCMSGPartial" PDdCMSG -> Bool {cons("Bool158Syn")}
+    String "=/=String" String -> Bool {left, cons("Bool160Syn")}
+    "freshId" "(" InsertDzInt ")" -> Id {cons("Id162Syn")}
+    DzInt -> Int {}
+    PDdCId -> Entry {}
+    "#freezer" K -> KLabel {cons("KLabel164Syn")}
+    PDdCId -> RuleParamList {}
+    "isPV" "(" InsertDzPDdCId ")" -> Bool {cons("Bool168Syn")}
+    "isPI" "(" InsertDzPDdCId ")" -> Bool {cons("Bool169Syn")}
+    "ordChar" "(" InsertDzString ")" -> Int {cons("Int167Syn")}
+    PDdCId "==PDCId" PDdCId -> Bool {left, cons("Bool172Syn")}
+    K "|->" K -> Map {cons("Map173Syn")}
+    "freshInt" "(" InsertDzInt ")" -> Int {cons("Int174Syn")}
+    "size" "(" InsertDzList ")" -> Int {cons("Int175Syn")}
+    "checkRule" "(" InsertDzPDdCRule ")" -> Bool {cons("Bool176Syn")}
+    Int "=Int" Int -> Bool {cons("Bool178Syn")}
+    "getRules" "(" InsertDzPDdCModule ")" -> PDdCModuleEntryList {cons("PDdCModuleEntryList179Syn")}
+    "updateMap" "(" InsertDzMap "," InsertDzMap ")" -> Map {cons("Map177Syn")}
+    "ListItem" "(" InsertDzK ")" -> List {cons("List180Syn")}
+    "ruleId" "(" InsertDzPDdCRule ")" -> PDdCId {cons("PDdCId182Syn")}
+    "getMainRule" "(" InsertDzPDdCModule ")" -> PDdCRule {cons("PDdCRule183Syn")}
+    "@UC" "(" InsertDzId ")" -> PDdCId {cons("PDdCId186Syn")}
+    "rfindChar" "(" InsertDzString "," InsertDzString "," InsertDzInt ")" -> Int {cons("Int185Syn")}
+    "expFloat" "(" InsertDzFloat ")" -> Float {cons("Float184Syn")}
+    "acosFloat" "(" InsertDzFloat ")" -> Float {cons("Float187Syn")}
+    "@start" Entry -> Entry {cons("Entry190Syn")}
+    "checkModule" "(" InsertDzPDdCModule ")" -> Bool {cons("Bool193Syn")}
+    "#lstat" "(" InsertDzString ")" -> KList {cons("KList195Syn")}
+    PDdCMSG PDdCMSGList -> PDdCMSGList {right, cons("PDdCMSGList196Syn")}
+    "trim" "(" InsertDzString ")" -> String {cons("String197Syn")}
+    "idRemove" "(" InsertDzPDdCId "," InsertDzPDdCIdList ")" -> PDdCIdList {cons("PDdCIdList199Syn")}
+    "#parseInModule" "(" InsertDzString "," InsertDzString "," InsertDzString ")" -> KItem {cons("KItem198Syn")}
+    "maxFloat" "(" InsertDzFloat "," InsertDzFloat ")" -> Float {cons("Float1200Syn")}
+    "#opendir" "(" InsertDzString ")" -> KList {cons("KList1202Syn")}
+    "dependentMSG" "(" InsertDzPDdCMSG "," InsertDzPDdCIdList ")" -> Bool {cons("Bool1203Syn")}
+    Int "<Int" Int -> Bool {left, cons("Bool1204Syn")}
+    KLabel "=KLabel" KLabel -> Bool {cons("Bool1205Syn")}
+    "exponentBitsFloat" "(" InsertDzFloat ")" -> Int {cons("Int1206Syn")}
+    "absInt" "(" InsertDzInt ")" -> Int {cons("Int1207Syn")}
+    "String2Float" "(" InsertDzString ")" -> Float {cons("Float1208Syn")}
+    "errorCase" "(" InsertDzBool "," InsertDzErrorCode "," InsertDzErrorCode ")" -> ErrorCode {cons("ErrorCode1209Syn")}
+    ".PDCRule" -> PDdCRule {cons("PDdCRule1222Syn")}
+    "Float2Int" "(" InsertDzFloat ")" -> Int {cons("Int1223Syn")}
+    "cool" "(" InsertDzK ")" -> K {cons("K1224Syn")}
+    "range" "(" InsertDzList "," InsertDzInt "," InsertDzInt ")" -> List {cons("List1226Syn")}
+    "rtrim" "(" InsertDzString ")" -> String {cons("String1228Syn")}
+    "cosFloat" "(" InsertDzFloat ")" -> Float {cons("Float1230Syn")}
+    "chrChar" "(" InsertDzInt ")" -> String {cons("String1232Syn")}
+    "directionalityChar" "(" InsertDzString ")" -> String {cons("String1233Syn")}
+    "notContainProcessVariable" "(" InsertDzPDdCMSG ")" -> Bool {cons("Bool1234Syn")}
+    DzBool -> Bool {}
+    "isNaN" "(" InsertDzFloat ")" -> Bool {cons("Bool1235Syn")}
+    Set "<=Set" Set -> Bool {cons("Bool1236Syn")}
+    Entry -> EntryList {}
+    KList "=KList" KList -> Bool {cons("Bool1237Syn")}
+    "@optional" RuleBody -> Entry {cons("Entry1240Syn")}
+    "pisOfMsg" "(" InsertDzPDdCMSG ")" -> PDdCIdList {cons("PDdCIdList1239Syn")}
+    Float ">=Float" Float -> Bool {left, cons("Bool1238Syn")}
+    Float "<Float" Float -> Bool {left, cons("Bool1243Syn")}
+    Map Map -> Map {left, cons("Map1242Syn")}
+    "Float2String" "(" InsertDzFloat ")" -> String {cons("String1245Syn")}
+    "atan2Float" "(" InsertDzFloat "," InsertDzFloat ")" -> Float {cons("Float1244Syn")}
+    "(" InsertDzRuleParamList ")" -> RuleParams {cons("RuleParams1246Syn")}
+    "#putc" "(" InsertDzInt "," InsertDzInt ")" -> K {cons("K1247Syn")}
+    "randomRandom" "(" InsertDzInt ")" -> Int {cons("Int1248Syn")}
+    "#noIO" -> Stream {cons("Stream1250Syn")}
+    "#tokenToString" "(" InsertDzK ")" -> String {cons("String1254Syn")}
+    Float "=/=Float" Float -> Bool {left, cons("Bool1253Syn")}
+    "#EACCES" -> IOError {cons("IOError1256Syn")}
+    "#parse" "(" InsertDzString "," InsertDzString ")" -> KItem {cons("KItem1258Syn")}
+    List "=List" List -> Bool {cons("Bool1257Syn")}
+    "intersectSet" "(" InsertDzSet "," InsertDzSet ")" -> Set {cons("Set1259Syn")}
+    "Base2String" "(" InsertDzInt "," InsertDzInt ")" -> String {cons("String1260Syn")}
+    "findString" "(" InsertDzString "," InsertDzString "," InsertDzInt ")" -> Int {cons("Int1262Syn")}
+    "Int2String" "(" InsertDzInt ")" -> String {cons("String1263Syn")}
+    "processModule" "(" InsertDzPDdCModuleEntryList ")" -> PDdCModule {cons("PDdCModule1265Syn")}
+    Set Set -> Set {left, cons("Set1266Syn")}
+    "findMainRuleId" "(" InsertDzPDdCModuleEntryList ")" -> PDdCId {cons("PDdCId1267Syn")}
+    PDdCId "=/=PDCId" PDdCId -> Bool {left, cons("Bool1268Syn")}
+    "ltrim" "(" InsertDzString ")" -> String {cons("String1270Syn")}
+    Map "[" InsertDzK "]" -> K {cons("K1269Syn")}
+    "verifyModule" "(" InsertDzPDdCModule ")" -> PDdCModule {cons("PDdCModule1272Syn")}
+    "#write" "(" InsertDzInt "," InsertDzString ")" -> K {cons("K1273Syn")}
+    "(" ")" -> RuleParams {cons("RuleParams1274Syn")}
+    PDdCMSG -> Entry {}
+    K "#inKList" KList -> Bool {cons("Bool1275Syn")}
+    "rootFloat" "(" InsertDzFloat "," InsertDzInt ")" -> Float {cons("Float1276Syn")}
+    "absFloat" "(" InsertDzFloat ")" -> Float {cons("Float1277Syn")}
+    "idIsMember" "(" InsertDzPDdCId "," InsertDzPDdCIdList ")" -> Bool {cons("Bool1278Syn")}
+    "lookupRule" "(" InsertDzPDdCId "," InsertDzPDdCModuleEntryList ")" -> PDdCRule {cons("PDdCRule1282Syn")}
+    "#if" InsertDzBool "#then" InsertDzK "#else" InsertDzK "#fi" -> K {cons("K1280Syn")}
+    "#isWhiteSpace" "(" InsertDzString ")" -> Bool {cons("Bool1283Syn")}
+    "SetItem" "(" InsertDzK ")" -> Set {cons("Set1284Syn")}
+    "logFloat" "(" InsertDzFloat ")" -> Float {cons("Float1285Syn")}
+    "isEmptyPDCMSGList" "(" InsertDzPDdCMSGList ")" -> Bool {cons("Bool1286Syn")}
+    "#open" "(" InsertDzString "," InsertDzString ")" -> KItem {cons("KItem1287Syn")}
+    "choice" "(" InsertDzSet ")" -> K {cons("K1288Syn")}
+    "pis" "(" InsertDzPDdCIdList ")" -> PDdCIdList {cons("PDdCIdList1289Syn")}
+    KLabel "==KLabel" KLabel -> Bool {cons("Bool1290Syn")}
+    "@PDCModule" "(" InsertDzPDdCRule "," InsertDzPDdCModuleEntryList ")" -> PDdCModule {cons("PDdCModule1292Syn")}
+    "String2Int" "(" InsertDzString ")" -> Int {cons("Int1293Syn")}
+    "paramListToIdList" "(" InsertDzRuleParams ")" -> PDdCIdList {cons("PDdCIdList1294Syn")}
+    K -> KList {}
+    KList "=/=KList" KList -> Bool {cons("Bool1295Syn")}
+    Int "=/=Int" Int -> Bool {left, cons("Bool1296Syn")}
+    "#isDigit" "(" InsertDzString ")" -> Bool {cons("Bool1297Syn")}
+    PDdCMSG "==PDCMSG" PDdCMSG -> Bool {left, cons("Bool1298Syn")}
+    "@start" "@instantly" -> Entry {cons("Entry1299Syn")}
+    DzString -> String {}
+    "@NoError" -> ErrorCode {cons("ErrorCode1300Syn")}
+    "fpNaN" "(" InsertDzInt "," InsertDzInt ")" -> Float {cons("Float1302Syn")}
+    "isInfinite" "(" InsertDzFloat ")" -> Bool {cons("Bool1306Syn")}
+    "isEmptyEntryList" "(" InsertDzEntryList ")" -> Bool {cons("Bool1308Syn")}
+    "fresh" "(" InsertDzString ")" -> KItem {cons("KItem1309Syn")}
+    DzFloat -> Float {}
+    ".PDCId" -> PDdCId {cons("PDdCId1325Syn")}
+    "rfindString" "(" InsertDzString "," InsertDzString "," InsertDzInt ")" -> Int {cons("Int1324Syn")}
+    "Id2String" "(" InsertDzId ")" -> String {cons("String1327Syn")}
+    "#ELOOP" -> IOError {cons("IOError1328Syn")}
+    Set "-Set" Set -> Set {cons("Set1329Syn")}
+    ".PDCIdList" -> PDdCIdList {cons("PDdCIdList1332Syn")}
+    "String2Base" "(" InsertDzString "," InsertDzInt ")" -> Int {cons("Int1330Syn")}
+    "#systemResult" "(" InsertDzInt "," InsertDzString "," InsertDzString ")" -> KItem {cons("KItem1334Syn")}
+    "keys" "(" InsertDzMap ")" -> Set {cons("Set1333Syn")}
+    "#stdin" -> Int {cons("Int1336Syn")}
+    "maxInt" "(" InsertDzInt "," InsertDzInt ")" -> Int {cons("Int1338Syn")}
+    "#configuration" -> Bag {cons("Bag1340Syn")}
+    "lengthString" "(" InsertDzString ")" -> Int {cons("Int1339Syn")}
+    "ruleParams" "(" InsertDzPDdCRule ")" -> RuleParams {cons("RuleParams1347Syn")}
+    "idConcat" "(" InsertDzPDdCIdList "," InsertDzPDdCIdList ")" -> PDdCIdList {cons("PDdCIdList1348Syn")}
+    "#parseToken" "(" InsertDzString "," InsertDzString ")" -> KItem {cons("KItem1349Syn")}
+    "@more-of" RuleBody -> Entry {cons("Entry1350Syn")}
+    "#system" "(" InsertDzString ")" -> KItem {cons("KItem1354Syn")}
+    "#stat" "(" InsertDzString ")" -> KList {cons("KList1355Syn")}
+    Float "<=Float" Float -> Bool {left, cons("Bool1356Syn")}
+    KItem -> K {}
+    "tanFloat" "(" InsertDzFloat ")" -> Float {cons("Float1357Syn")}
+    "replace" "(" InsertDzString "," InsertDzString "," InsertDzString "," InsertDzInt ")" -> String {cons("String1358Syn")}
+    ".Set" -> Set {cons("Set1359Syn")}
+    "@rule" InsertDzPDdCId InsertDzRuleParams RuleBody -> PDdCRule {cons("PDdCRule1360Syn")}
+    "structuralCheck" "(" InsertDzPDdCModule ")" -> Bool {cons("Bool1362Syn")}
+    "#close" "(" InsertDzInt ")" -> K {cons("K1363Syn")}
+    "minInt" "(" InsertDzInt "," InsertDzInt ")" -> Int {cons("Int1364Syn")}
+    "@many-of" RuleBody -> Entry {cons("Entry1365Syn")}
+    List List -> List {left, cons("List1366Syn")}
+    "maxValueFloat" "(" InsertDzInt "," InsertDzInt ")" -> Float {cons("Float1369Syn")}
+    Map "<=Map" Map -> Bool {cons("Bool1372Syn")}
+    PDdCModuleEntry PDdCModuleEntryList -> PDdCModuleEntryList {right, cons("PDdCModuleEntryList1373Syn")}
+    Int ">Int" Int -> Bool {left, cons("Bool1374Syn")}
+    "String2Id" "(" InsertDzString ")" -> Id {cons("Id1375Syn")}
+    "@start" RuleBody -> Entry {cons("Entry1377Syn")}
+    "ceilFloat" "(" InsertDzFloat ")" -> Float {cons("Float1376Syn")}
+    "#ENOTDIR" -> IOError {cons("IOError1378Syn")}
+    String "==String" String -> Bool {left, cons("Bool1379Syn")}
+    "atanFloat" "(" InsertDzFloat ")" -> Float {cons("Float1382Syn")}
+    String "+String" String -> String {left, cons("String1384Syn")}
+    ".EntryList" -> EntryList {cons("EntryList1386Syn")}
+    PDdCRule -> PDdCModuleEntry {}
+    String ">=String" String -> Bool {cons("Bool1387Syn")}
+    K "in" Set -> Bool {cons("Bool1388Syn")}
+    Int "<=Int" Int -> Bool {left, cons("Bool1389Syn")}
+    KLabel "=/=KLabel" KLabel -> Bool {cons("Bool1392Syn")}
+    ".Map" -> Map {cons("Map1390Syn")}
+    KList "==KList" KList -> Bool {cons("Bool1393Syn")}
+    "insertIdsOfMsg" "(" InsertDzPDdCMSG "," InsertDzPDdCIdList ")" -> PDdCIdList {cons("PDdCIdList1394Syn")}
+    Int "==Int" Int -> Bool {left, cons("Bool1395Syn")}
+    "Char2String" "(" InsertDzChar ")" -> String {cons("String1397Syn")}
+    "replaceAll" "(" InsertDzString "," InsertDzString "," InsertDzString ")" -> String {cons("String1398Syn")}
+    Int ">=Int" Int -> Bool {left, cons("Bool1399Syn")}
+    ".PDCMSGList" -> PDdCMSGList {cons("PDdCMSGList1400Syn")}
+    "#ENOENT" -> IOError {cons("IOError1402Syn")}
+    "#EINVAL" -> IOError {cons("IOError1404Syn")}
+    String ">String" String -> Bool {cons("Bool1405Syn")}
+    Bag "=Bag" Bag -> Bool {cons("Bool1406Syn")}
+    "isToken" "(" InsertDzK ")" -> Bool {cons("Bool1407Syn")}
+    ".RuleParamList" -> RuleParamList {cons("RuleParamList1408Syn")}
+    "floorFloat" "(" InsertDzFloat ")" -> Float {cons("Float1409Syn")}
+    "precisionFloat" "(" InsertDzFloat ")" -> Int {cons("Int1420Syn")}
+    "idInsert" "(" InsertDzPDdCId "," InsertDzPDdCIdList ")" -> PDdCIdList {cons("PDdCIdList1422Syn")}
+    List "[" InsertDzInt "]" -> K {cons("K1423Syn")}
+    "String2Char" "(" InsertDzString ")" -> Char {cons("Char1425Syn")}
+    "#stdout" -> Int {cons("Int1426Syn")}
+    "@StructuralError" -> ErrorCode {cons("ErrorCode1427Syn")}
+    "ruleBody" "(" InsertDzPDdCRule ")" -> RuleBody {cons("RuleBody1428Syn")}
+    "#noparse" -> IOError {cons("IOError1430Syn")}
+    "@MSG" "(" InsertDzPDdCId "," InsertDzPDdCId "," InsertDzPDdCId ")" -> PDdCMSG {cons("PDdCMSG1432Syn")}
+    Float ">Float" Float -> Bool {left, cons("Bool1433Syn")}
+    ".PDCModule" -> PDdCModule {cons("PDdCModule1434Syn")}
+    "minusInfinity" "(" InsertDzInt "," InsertDzInt ")" -> Float {cons("Float1436Syn")}
+    "Int2Float" "(" InsertDzInt "," InsertDzInt "," InsertDzInt ")" -> Float {cons("Float1437Syn")}
+    "#istream" "(" InsertDzInt ")" -> Stream {cons("Stream1438Syn")}
+    "replaceFirst" "(" InsertDzString "," InsertDzString "," InsertDzString ")" -> String {cons("String1439Syn")}
+    "countAllOccurrences" "(" InsertDzString "," InsertDzString ")" -> Int {cons("Int1440Syn")}
+    "{" "}" -> RuleBody {cons("RuleBody1442Syn")}
+    "isEmptyPCDIdList" "(" InsertDzPDdCIdList ")" -> Bool {cons("Bool1443Syn")}
+    KResult -> KItem {}
+    "@one-of" RuleBody -> Entry {cons("Entry1444Syn")}
+    "#ENAMETOOLONG" -> IOError {cons("IOError1446Syn")}
+    "containProcessVariable" "(" InsertDzPDdCMSG ")" -> Bool {cons("Bool1447Syn")}
+    "plusInfinity" "(" InsertDzInt "," InsertDzInt ")" -> Float {cons("Float1445Syn")}
+    "@main-rule" PDdCId -> PDdCModuleEntry {cons("PDdCModuleEntry1448Syn")}
+    "getKLabel" K -> KLabel {cons("KLabel1450Syn")}
+    "significandFloat" "(" InsertDzFloat ")" -> MInt {cons("MInt1449Syn")}
+    "@NoDeclaredMainRule" -> ErrorCode {cons("ErrorCode1452Syn")}
+    Float "==Float" Float -> Bool {left, cons("Bool1453Syn")}
+    PDdCId PDdCIdList -> PDdCIdList {right, cons("PDdCIdList1454Syn")}
+    ".PDCModuleEntryList" -> PDdCModuleEntryList {cons("PDdCModuleEntryList1455Syn")}
+    "pvsOfMsg" "(" InsertDzPDdCMSG ")" -> PDdCIdList {cons("PDdCIdList1456Syn")}
+    "size" "(" InsertDzMap ")" -> Int {cons("Int1457Syn")}
+    "dummy" "(" InsertDzKList ")" -> KItem {cons("KItem1458Syn")}
+    "bool2Int" "(" InsertDzBool ")" -> Int {cons("Int1459Syn")}
+    "#getc" "(" InsertDzInt ")" -> KItem {cons("KItem1460Syn")}
+    "@SequenceMissmatch" -> ErrorCode {cons("ErrorCode1462Syn")}
+    "minFloat" "(" InsertDzFloat "," InsertDzFloat ")" -> Float {cons("Float1464Syn")}
+    String "<=String" String -> Bool {cons("Bool1465Syn")}
+    "#EOF" -> IOError {cons("IOError1467Syn")}
+    "Float2String" "(" InsertDzFloat "," InsertDzString ")" -> String {cons("String1466Syn")}
+    "#tell" "(" InsertDzInt ")" -> KItem {cons("KItem1469Syn")}
+    "#open" "(" InsertDzString ")" -> KItem {cons("KItem1470Syn")}
+    "choice" "(" InsertDzMap ")" -> K {cons("K1474Syn")}
+    "@seq" RuleBody -> Entry {cons("Entry1475Syn")}
+    "{" InsertDzEntryList "}" -> RuleBody {cons("RuleBody1477Syn")}
+    K "=K" K -> Bool {cons("Bool1479Syn")}
+    "size" "(" InsertDzSet ")" -> Int {cons("Int1480Syn")}
+    "@optional" Entry -> Entry {cons("Entry1482Syn")}
+    "#ESPIPE" -> IOError {cons("IOError1484Syn")}
+    Map "[" InsertDzK "<-" "undef" "]" -> Map {cons("Map1485Syn")}
+    K "in" List -> Bool {cons("Bool1486Syn")}
+    "#seek" "(" InsertDzInt "," InsertDzInt ")" -> K {cons("K1488Syn")}
+    "@EmptyOneOf" -> ErrorCode {cons("ErrorCode1489Syn")}
+    "#ioError" "(" InsertDzString ")" -> KItem {cons("KItem1490Syn")}
+    "asinFloat" "(" InsertDzFloat ")" -> Float {cons("Float1492Syn")}
+    Set -> InsertDzSet
+    PDdCIdList -> InsertDzPDdCIdList
+    PDdCModuleEntryList -> InsertDzPDdCModuleEntryList
+    K -> InsertDzK
+    String -> InsertDzString
+    EntryList -> InsertDzEntryList
+    RuleParamList -> InsertDzRuleParamList
+    KList -> InsertDzKList
+    PDdCId -> InsertDzPDdCId
+    Int -> InsertDzInt
+    PDdCMSGList -> InsertDzPDdCMSGList
+    Float -> InsertDzFloat
+    KLabel -> InsertDzKLabel
+    PDdCMSG -> InsertDzPDdCMSG
+    RuleParams -> InsertDzRuleParams
+    Bool -> InsertDzBool
+    Char -> InsertDzChar
+    PDdCRule -> InsertDzPDdCRule
+    List -> InsertDzList
+    Id -> InsertDzId
+    ErrorCode -> InsertDzErrorCode
+    Map -> InsertDzMap
+    KItem -> InsertDzKItem
+    PDdCModule -> InsertDzPDdCModule
+
+
+    DzDzString        -> DzString    {cons("DzString1Const")}
+    DzDzBool        -> DzBool    {cons("DzBool1Const")}
+    DzKLabel        -> KLabel    {cons("KLabel1Const")}
+    DzDzInt        -> DzInt    {cons("DzInt1Const")}
+    DzDzId        -> DzId    {cons("DzId1Const")}
+    DzDzFloat        -> DzFloat    {cons("DzFloat1Const")}
+
+
+
+%% start symbols subsorts
+    KItem        -> K
+    Set        -> K
+    MInt        -> K
+    String        -> K
+    PDdCModuleEntry        -> K
+    EntryList        -> K
+    RuleParamList        -> K
+    PDdCId        -> K
+    RuleBody        -> K
+    Int        -> K
+    PDdCMSGList        -> K
+    Entry        -> K
+    PDdCMSG        -> K
+    Bool        -> K
+    Char        -> K
+    Stream        -> K
+    List        -> K
+    DzInt        -> K
+    DzString        -> K
+    DzBool        -> K
+    PDdCIdList        -> K
+    PDdCModuleEntryList        -> K
+    Float        -> K
+    RuleParams        -> K
+    IOError        -> K
+    PDdCRule        -> K
+    ErrorCode        -> K
+    Id        -> K
+    Map        -> K
+    PDdCModule        -> K
+    DzFloat        -> K
+lexical syntax
+    "#token" -> DzKLabel
+    "Infinity" -> DzDzFloat
+    "true" -> DzDzBool
+    "'#andBool" -> DzKLabel
+    "false" -> DzDzBool
+    "NaN" -> DzDzFloat
+
+
+    "fpNaN" -> IdDz {reject}
+    "updateMap" -> IdDz {reject}
+    "directionalityChar" -> IdDz {reject}
+    "dependentMSG" -> IdDz {reject}
+    "removeAll" -> IdDz {reject}
+    "trim" -> IdDz {reject}
+    "categoryChar" -> IdDz {reject}
+    "ruleId" -> IdDz {reject}
+    "exponentBitsFloat" -> IdDz {reject}
+    "ordChar" -> IdDz {reject}
+    "Int2Float" -> IdDz {reject}
+    "isEmptyPCDIdList" -> IdDz {reject}
+    "sinFloat" -> IdDz {reject}
+    "size" -> IdDz {reject}
+    "getKLabel" -> IdDz {reject}
+    "minFloat" -> IdDz {reject}
+    "idIsMember" -> IdDz {reject}
+    "tanFloat" -> IdDz {reject}
+    "String2Base" -> IdDz {reject}
+    "Base2String" -> IdDz {reject}
+    "replaceFirst" -> IdDz {reject}
+    "findMainRuleId" -> IdDz {reject}
+    "KLabel2String" -> IdDz {reject}
+    "isInfinite" -> IdDz {reject}
+    "acosFloat" -> IdDz {reject}
+    "getRules" -> IdDz {reject}
+    "xorBool" -> IdDz {reject}
+    "Infinity" -> IdDz {reject}
+    "maxInt" -> IdDz {reject}
+    "undef" -> IdDz {reject}
+    "atanFloat" -> IdDz {reject}
+    "rootFloat" -> IdDz {reject}
+    "minValueFloat" -> IdDz {reject}
+    "ruleParams" -> IdDz {reject}
+    "isKResult" -> IdDz {reject}
+    "isPV" -> IdDz {reject}
+    "xorInt" -> IdDz {reject}
+    "notBool" -> IdDz {reject}
+    "roundFloat" -> IdDz {reject}
+    "isNaN" -> IdDz {reject}
+    "isPI" -> IdDz {reject}
+    "getMainRule" -> IdDz {reject}
+    "lengthString" -> IdDz {reject}
+    "floorFloat" -> IdDz {reject}
+    "ltrim" -> IdDz {reject}
+    "isBuiltin" -> IdDz {reject}
+    "sqrtFloat" -> IdDz {reject}
+    "orBool" -> IdDz {reject}
+    "errorCase" -> IdDz {reject}
+    "countAllOccurrences" -> IdDz {reject}
+    "insertIdsOfMsg" -> IdDz {reject}
+    "precisionFloat" -> IdDz {reject}
+    "isEmptyEntryList" -> IdDz {reject}
+    "replaceAll" -> IdDz {reject}
+    "expFloat" -> IdDz {reject}
+    "checkModule" -> IdDz {reject}
+    "rfindChar" -> IdDz {reject}
+    "NaN" -> IdDz {reject}
+    "intersectSet" -> IdDz {reject}
+    "minusInfinity" -> IdDz {reject}
+    "freshId" -> IdDz {reject}
+    "signFloat" -> IdDz {reject}
+    "false" -> IdDz {reject}
+    "lookupRule" -> IdDz {reject}
+    "String2Int" -> IdDz {reject}
+    "ListItem" -> IdDz {reject}
+    "fresh" -> IdDz {reject}
+    "freshInt" -> IdDz {reject}
+    "containProcessVariable" -> IdDz {reject}
+    "pisOfMsg" -> IdDz {reject}
+    "paramListToIdList" -> IdDz {reject}
+    "rfindString" -> IdDz {reject}
+    "Float2Int" -> IdDz {reject}
+    "dummy" -> IdDz {reject}
+    "findString" -> IdDz {reject}
+    "dividesInt" -> IdDz {reject}
+    "in" -> IdDz {reject}
+    "cosFloat" -> IdDz {reject}
+    "Float2String" -> IdDz {reject}
+    "pvs" -> IdDz {reject}
+    "String2Id" -> IdDz {reject}
+    "divInt" -> IdDz {reject}
+    "absInt" -> IdDz {reject}
+    "bool2Int" -> IdDz {reject}
+    "ceilFloat" -> IdDz {reject}
+    "chrChar" -> IdDz {reject}
+    "randomRandom" -> IdDz {reject}
+    "range" -> IdDz {reject}
+    "plusInfinity" -> IdDz {reject}
+    "verifyModule" -> IdDz {reject}
+    "cool" -> IdDz {reject}
+    "significandFloat" -> IdDz {reject}
+    "maxValueFloat" -> IdDz {reject}
+    "structuralCheck" -> IdDz {reject}
+    "String2Float" -> IdDz {reject}
+    "choice" -> IdDz {reject}
+    "impliesBool" -> IdDz {reject}
+    "andThenBool" -> IdDz {reject}
+    "asinFloat" -> IdDz {reject}
+    "idRemove" -> IdDz {reject}
+    "replace" -> IdDz {reject}
+    "String2KLabel" -> IdDz {reject}
+    "notContainProcessVariable" -> IdDz {reject}
+    "isToken" -> IdDz {reject}
+    "idInsert" -> IdDz {reject}
+    "pvsOfMsg" -> IdDz {reject}
+    "substrString" -> IdDz {reject}
+    "pis" -> IdDz {reject}
+    "atan2Float" -> IdDz {reject}
+    "Int2String" -> IdDz {reject}
+    "absFloat" -> IdDz {reject}
+    "maxFloat" -> IdDz {reject}
+    "true" -> IdDz {reject}
+    "Char2String" -> IdDz {reject}
+    "String2Char" -> IdDz {reject}
+    "modInt" -> IdDz {reject}
+    "minInt" -> IdDz {reject}
+    "keys" -> IdDz {reject}
+    "ruleBody" -> IdDz {reject}
+    "values" -> IdDz {reject}
+    "orElseBool" -> IdDz {reject}
+    "findChar" -> IdDz {reject}
+    "logFloat" -> IdDz {reject}
+    "isEmptyPDCMSGList" -> IdDz {reject}
+    "idConcat" -> IdDz {reject}
+    "Id2String" -> IdDz {reject}
+    "checkRule" -> IdDz {reject}
+    "exponentFloat" -> IdDz {reject}
+    "rtrim" -> IdDz {reject}
+    "inKList" -> IdDz {reject}
+    "SetItem" -> IdDz {reject}
+    "andBool" -> IdDz {reject}
+    "processModule" -> IdDz {reject}
+
+lexical restrictions
+    %% follow restrictions
+    "pis" -/- [O].[f].[M].[s].[g]
+    "fresh" -/- [I].[n].[t]
+    "==K" -/- [L].[i].[s].[t]
+    ".PDCModule" -/- [E].[n].[t].[r].[y].[L].[i].[s].[t]
+    "in" -/- [K].[L].[i].[s].[t]
+    "#parse" -/- [I].[n].[M].[o].[d].[u].[l].[e]
+    "replace" -/- [F].[i].[r].[s].[t]
+    "#system" -/- [R].[e].[s].[u].[l].[t]
+    "fresh" -/- [I].[d]
+    "pvs" -/- [O].[f].[M].[s].[g]
+    "#parse" -/- [I].[n].[p].[u].[t]
+    "replace" -/- [A].[l].[l]
+    "#parse" -/- [T].[o].[k].[e].[n]
+    "=/=K" -/- [L].[a].[b].[e].[l]
+    "==PDCMSG" -/- [P].[a].[r].[t].[i].[a].[l]
+    "=/=K" -/- [L].[i].[s].[t]
+    "=K" -/- [L].[a].[b].[e].[l]
+    ".PDCId" -/- [L].[i].[s].[t]
+    "#token" -/- [T].[o].[S].[t].[r].[i].[n].[g]
+    "=K" -/- [L].[i].[s].[t]
+    "==K" -/- [L].[a].[b].[e].[l]
+
+
+lexical syntax
+    [\-\+]? [0-9]+ -> DzIntDz
+    "\"" ((~[\"\n\r\\]) | (((([\\][nrtf\"\\]) | ([\\][x][0-9a-fA-F][0-9a-fA-F])) | ([\\][u][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F])) | ([\\][U][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F])))* "\"" -> DzStringDz
+    [\+\-]?[0-9]+"."[0-9]+([eE][\+\-]?[0-9]+)?([fFdD]|([pP][0-9]+[xX][0-9]+))? -> DzFloatDz
+    [\+\-]?"Infinity"([fFdD]|([pP][0-9]+[xX][0-9]+))? -> DzFloatDz
+    "Infinity" -> DzFloatDz {reject}
+    "NaN"([fFdD]|([pP][0-9]+[xX][0-9]+))? -> DzFloatDz
+    "NaN" -> DzFloatDz {reject}
+    [A-Za-z\_][A-Za-z0-9\_]* -> IdDz
+    "fpNaN" -> IdDz {reject}
+    "updateMap" -> IdDz {reject}
+    "directionalityChar" -> IdDz {reject}
+    "dependentMSG" -> IdDz {reject}
+    "removeAll" -> IdDz {reject}
+    "trim" -> IdDz {reject}
+    "categoryChar" -> IdDz {reject}
+    "ruleId" -> IdDz {reject}
+    "exponentBitsFloat" -> IdDz {reject}
+    "ordChar" -> IdDz {reject}
+    "Int2Float" -> IdDz {reject}
+    "isEmptyPCDIdList" -> IdDz {reject}
+    "sinFloat" -> IdDz {reject}
+    "size" -> IdDz {reject}
+    "getKLabel" -> IdDz {reject}
+    "minFloat" -> IdDz {reject}
+    "idIsMember" -> IdDz {reject}
+    "tanFloat" -> IdDz {reject}
+    "String2Base" -> IdDz {reject}
+    "Base2String" -> IdDz {reject}
+    "replaceFirst" -> IdDz {reject}
+    "findMainRuleId" -> IdDz {reject}
+    "KLabel2String" -> IdDz {reject}
+    "isInfinite" -> IdDz {reject}
+    "acosFloat" -> IdDz {reject}
+    "getRules" -> IdDz {reject}
+    "xorBool" -> IdDz {reject}
+    "Infinity" -> IdDz {reject}
+    "maxInt" -> IdDz {reject}
+    "undef" -> IdDz {reject}
+    "atanFloat" -> IdDz {reject}
+    "rootFloat" -> IdDz {reject}
+    "minValueFloat" -> IdDz {reject}
+    "ruleParams" -> IdDz {reject}
+    "isKResult" -> IdDz {reject}
+    "isPV" -> IdDz {reject}
+    "xorInt" -> IdDz {reject}
+    "notBool" -> IdDz {reject}
+    "roundFloat" -> IdDz {reject}
+    "isNaN" -> IdDz {reject}
+    "isPI" -> IdDz {reject}
+    "getMainRule" -> IdDz {reject}
+    "lengthString" -> IdDz {reject}
+    "floorFloat" -> IdDz {reject}
+    "ltrim" -> IdDz {reject}
+    "isBuiltin" -> IdDz {reject}
+    "sqrtFloat" -> IdDz {reject}
+    "orBool" -> IdDz {reject}
+    "errorCase" -> IdDz {reject}
+    "countAllOccurrences" -> IdDz {reject}
+    "insertIdsOfMsg" -> IdDz {reject}
+    "precisionFloat" -> IdDz {reject}
+    "isEmptyEntryList" -> IdDz {reject}
+    "replaceAll" -> IdDz {reject}
+    "expFloat" -> IdDz {reject}
+    "checkModule" -> IdDz {reject}
+    "rfindChar" -> IdDz {reject}
+    "NaN" -> IdDz {reject}
+    "intersectSet" -> IdDz {reject}
+    "minusInfinity" -> IdDz {reject}
+    "freshId" -> IdDz {reject}
+    "signFloat" -> IdDz {reject}
+    "false" -> IdDz {reject}
+    "lookupRule" -> IdDz {reject}
+    "String2Int" -> IdDz {reject}
+    "ListItem" -> IdDz {reject}
+    "fresh" -> IdDz {reject}
+    "freshInt" -> IdDz {reject}
+    "containProcessVariable" -> IdDz {reject}
+    "pisOfMsg" -> IdDz {reject}
+    "paramListToIdList" -> IdDz {reject}
+    "rfindString" -> IdDz {reject}
+    "Float2Int" -> IdDz {reject}
+    "dummy" -> IdDz {reject}
+    "findString" -> IdDz {reject}
+    "dividesInt" -> IdDz {reject}
+    "in" -> IdDz {reject}
+    "cosFloat" -> IdDz {reject}
+    "Float2String" -> IdDz {reject}
+    "pvs" -> IdDz {reject}
+    "String2Id" -> IdDz {reject}
+    "divInt" -> IdDz {reject}
+    "absInt" -> IdDz {reject}
+    "bool2Int" -> IdDz {reject}
+    "ceilFloat" -> IdDz {reject}
+    "chrChar" -> IdDz {reject}
+    "randomRandom" -> IdDz {reject}
+    "range" -> IdDz {reject}
+    "plusInfinity" -> IdDz {reject}
+    "verifyModule" -> IdDz {reject}
+    "cool" -> IdDz {reject}
+    "significandFloat" -> IdDz {reject}
+    "maxValueFloat" -> IdDz {reject}
+    "structuralCheck" -> IdDz {reject}
+    "String2Float" -> IdDz {reject}
+    "choice" -> IdDz {reject}
+    "impliesBool" -> IdDz {reject}
+    "andThenBool" -> IdDz {reject}
+    "asinFloat" -> IdDz {reject}
+    "idRemove" -> IdDz {reject}
+    "replace" -> IdDz {reject}
+    "String2KLabel" -> IdDz {reject}
+    "notContainProcessVariable" -> IdDz {reject}
+    "isToken" -> IdDz {reject}
+    "idInsert" -> IdDz {reject}
+    "pvsOfMsg" -> IdDz {reject}
+    "substrString" -> IdDz {reject}
+    "pis" -> IdDz {reject}
+    "atan2Float" -> IdDz {reject}
+    "Int2String" -> IdDz {reject}
+    "absFloat" -> IdDz {reject}
+    "maxFloat" -> IdDz {reject}
+    "true" -> IdDz {reject}
+    "Char2String" -> IdDz {reject}
+    "String2Char" -> IdDz {reject}
+    "modInt" -> IdDz {reject}
+    "minInt" -> IdDz {reject}
+    "keys" -> IdDz {reject}
+    "ruleBody" -> IdDz {reject}
+    "values" -> IdDz {reject}
+    "orElseBool" -> IdDz {reject}
+    "findChar" -> IdDz {reject}
+    "logFloat" -> IdDz {reject}
+    "isEmptyPDCMSGList" -> IdDz {reject}
+    "idConcat" -> IdDz {reject}
+    "Id2String" -> IdDz {reject}
+    "checkRule" -> IdDz {reject}
+    "exponentFloat" -> IdDz {reject}
+    "rtrim" -> IdDz {reject}
+    "inKList" -> IdDz {reject}
+    "SetItem" -> IdDz {reject}
+    "andBool" -> IdDz {reject}
+    "processModule" -> IdDz {reject}
+context-free syntax
+    DzStringDz -> DzString {cons("DzString1Const")}
+    IdDz -> Id {cons("Id1Const")}
+    DzIntDz -> DzInt {cons("DzInt1Const")}
+    DzFloatDz -> DzFloat {cons("DzFloat1Const")}
+
+
+context-free restrictions
+    DzInt -/-  [0-9]
+    Id -/- [A-Za-z0-9\_]

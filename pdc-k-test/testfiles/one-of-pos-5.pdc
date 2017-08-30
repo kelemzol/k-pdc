@@ -1,0 +1,13 @@
+rule one-of-pos-5 (A, B) {
+	start instantly
+	one-of {
+	    one-of { 
+	        A -> B : MSG
+	    }
+	    one-of {
+	        B -> A : MSG
+	    }
+	}
+}
+
+main-rule one-of-pos-5

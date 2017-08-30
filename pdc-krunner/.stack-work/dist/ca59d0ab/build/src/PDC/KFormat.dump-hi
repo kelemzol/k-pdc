@@ -1,0 +1,164 @@
+
+==================== FINAL INTERFACE ====================
+2017-07-06 12:28:46.1188948 UTC
+
+interface pdc-krunner-0.1.0.0-B1fLxNE250H1XZGvEQIUKz:PDC.KFormat 8002
+  interface hash: 47aac9015df0002bb8e1f6419c08dc9d
+  ABI hash: 68f3a0e13de2c45402b1ebc102a2784d
+  export-list hash: 19c7aa7cd896c64875d33987f64f0149
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 0280757dff064bfab6eba4bf450bc259
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  PDC.KFormat.kFormat
+  PDC.KFormat.kFormatIO
+module dependencies:
+package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.1.0
+                      binary-0.8.3.0@binary-0.8.3.0
+                      bytestring-0.10.8.1@bytestring-0.10.8.1
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+                      language-pdc-0.1.0.0@language-pdc-0.1.0.0-4olkbBRYHrvBnFC7Bq9OkB
+                      mtl-2.2.1@mtl-2.2.1-BLKBelFsPB3BoFeSWSOYj6
+                      parsec-3.1.11@parsec-3.1.11-113irVHGgd88sRnywByDNw
+                      text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR
+                      transformers-0.5.2.0@transformers-0.5.2.0
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+         binary-0.8.3.0@binary-0.8.3.0:Data.Binary.Generic
+         bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Builder
+         text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text
+         text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text.Lazy
+         text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text.Show
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Complex base-4.9.1.0:Data.Either
+                         base-4.9.1.0:Data.Functor.Const base-4.9.1.0:Data.Functor.Identity
+                         base-4.9.1.0:Data.List.NonEmpty base-4.9.1.0:Data.Monoid
+                         base-4.9.1.0:Data.Semigroup base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:Data.Version base-4.9.1.0:Data.Void
+                         base-4.9.1.0:GHC.Exts base-4.9.1.0:GHC.Generics
+                         base-4.9.1.0:GHC.IO.Exception base-4.9.1.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntMap.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntSet.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text
+                         text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text.Lazy
+import  -/  base-4.9.1.0:Data.Foldable 254e836c2d813d34e47feb29bb8d40ed
+import  -/  base-4.9.1.0:GHC.Base 4caea1123ecf4b46e27cbccd6d279377
+import  -/  base-4.9.1.0:GHC.Err 20faef8829fd13c027d0ee2213637534
+import  -/  base-4.9.1.0:GHC.IO 4d461f9283683225c61e68db403481ad
+import  -/  base-4.9.1.0:GHC.Show eca5834daba3b6a2bbbe64ab52056707
+import  -/  base-4.9.1.0:Prelude 74b3e204395920329f6de9d97206abe9
+import  -/  base-4.9.1.0:System.IO 5daf3f384209c11d9566e3409af8ec5d
+import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
+import  -/  language-pdc-0.1.0.0@language-pdc-0.1.0.0-4olkbBRYHrvBnFC7Bq9OkB:Language.PDC.Parser 350bc4125e3413e771b342cf37181e1e
+import  -/  language-pdc-0.1.0.0@language-pdc-0.1.0.0-4olkbBRYHrvBnFC7Bq9OkB:Language.PDC.Parser.Token 93a9343daae05b4e24982ec42a19035c
+a27d1e77821b2bbdb8e5ee8869c0ee9b
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   PDC.KFormat.$trModule2
+                   PDC.KFormat.$trModule1) -}
+5d4f423b9b5ac611971cf9d1d5e41ecf
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "PDC.KFormat"#) -}
+0b1adad1a3a0eb5f7293f7483056f562
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "pdc-krunner-0.1.0.0-B1fLxNE250H1XZGvEQIUKz"#) -}
+08104003177ea3d595524d54181c6c90
+  $wgenKFormat ::
+    [Language.PDC.Parser.Token.Token]
+    -> (# [Language.PDC.Parser.Token.Token], GHC.Base.String #)
+  {- Arity: 1, Strictness: <S,U>, Inline: [0] -}
+d1b3388323fc0ddec1cdac944f3ccc37
+  gen ::
+    ([Language.PDC.Parser.Token.Token]
+     -> ([Language.PDC.Parser.Token.Token], GHC.Base.String))
+    -> [Language.PDC.Parser.Token.Token] -> [GHC.Base.String]
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,C(U(U,U))><S,1*U> -}
+008e10a681695e93af4010e28191c7a9
+  genKFormat ::
+    [Language.PDC.Parser.Token.Token]
+    -> ([Language.PDC.Parser.Token.Token], GHC.Base.String)
+  {- Arity: 1, Strictness: <S,U>m, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: [Language.PDC.Parser.Token.Token]) ->
+                 case PDC.KFormat.$wgenKFormat w of ww { (#,#) ww1 ww2 ->
+                 (ww1, ww2) }) -}
+3d7a4cf0e7713dc1c0706655bdff8d2a
+  kFormat :: GHC.Types.Bool -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: (\ (ds1 :: GHC.Types.Bool) (eta :: GHC.Base.String) ->
+                 case ds1 of wild {
+                   GHC.Types.False
+                   -> PDC.KFormat.kFormat_go1
+                        (PDC.KFormat.gen
+                           PDC.KFormat.genKFormat
+                           (Language.PDC.Parser.Token.$wgo
+                              Language.PDC.Parser.Token.alexStartPos
+                              Language.PDC.Parser.Token.printTokens2
+                              (GHC.Types.[] @ Language.PDC.Parser.Token.Byte)
+                              eta))
+                   GHC.Types.True
+                   -> PDC.KFormat.kFormat_go
+                        (PDC.KFormat.gen
+                           PDC.KFormat.genKFormat
+                           (Language.PDC.Parser.Token.$wgo
+                              Language.PDC.Parser.Token.alexStartPos
+                              Language.PDC.Parser.Token.printTokens2
+                              (GHC.Types.[] @ Language.PDC.Parser.Token.Byte)
+                              eta)) }) -}
+de0a2bfb8d8ee3c3583649e4a22e4b41
+  kFormatIO ::
+    GHC.Types.Bool
+    -> GHC.IO.FilePath -> GHC.IO.FilePath -> GHC.Types.IO ()
+  {- Arity: 4, Strictness: <L,1*U><L,U><L,U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                PDC.KFormat.kFormatIO1
+                  `cast`
+                (<GHC.Types.Bool>_R
+                 ->_R <GHC.IO.FilePath>_R
+                 ->_R <GHC.IO.FilePath>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
+6b2a3fbb1ff23b0b37329276d1413ed8
+  kFormatIO1 ::
+    GHC.Types.Bool
+    -> GHC.IO.FilePath
+    -> GHC.IO.FilePath
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 4, Strictness: <L,1*U><L,U><L,U><S,U>,
+     Unfolding: (\ (mod :: GHC.Types.Bool)
+                   (i :: GHC.IO.FilePath)
+                   (o :: GHC.IO.FilePath)
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.IO.Handle.FD.openFile1
+                        i
+                        GHC.IO.IOMode.ReadMode
+                        eta of ds1 { (#,#) ipv ipv2 ->
+                 case GHC.IO.Handle.Text.hGetContents1
+                        ipv2
+                        ipv of ds2 { (#,#) ipv1 ipv3 ->
+                 System.IO.writeFile1 o (PDC.KFormat.kFormat mod ipv3) ipv1 } }) -}
+6ed85911ed8fd5a1b0750569e8ac8031
+  kFormat_go :: [[GHC.Types.Char]] -> [GHC.Types.Char]
+  {- Arity: 1, Strictness: <S,1*U> -}
+4173785f9206f82b70ea185307a4a801
+  kFormat_go1 :: [[GHC.Types.Char]] -> [GHC.Types.Char]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

@@ -1,0 +1,1594 @@
+
+==================== FINAL INTERFACE ====================
+2017-07-06 12:28:53.0255854 UTC
+
+interface main@main:PDC.KRunner 8002
+  interface hash: cd1cc0a4fb523bb5c43f03b2daf6b7f7
+  ABI hash: b196c63810651687509e02fef0737851
+  export-list hash: a4f9a59d5d9cb73f262aa5840abf7ed6
+  orphan hash: 1b31c49d58d378d044af8dd8fd5c852f
+  flag hash: 9c48376f382ee6d91bdc18ca39d861c8
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  PDC.KRunner.deleteExposed
+  PDC.KRunner.dowork
+  PDC.KRunner.expose
+  PDC.KRunner.genericExpose
+  PDC.KRunner.getBy
+  PDC.KRunner.getErrorCode
+  PDC.KRunner.getRunResult
+  PDC.KRunner.help
+  PDC.KRunner.includeValue
+  PDC.KRunner.krunnerMain
+  PDC.KRunner.parseconf
+  PDC.KRunner.preproc
+  PDC.KRunner.procconf
+  PDC.KRunner.process
+  PDC.KRunner.readIncludes
+  PDC.KRunner.readXML
+  PDC.KRunner.run
+  PDC.KRunner.runCmd
+  PDC.KRunner.work
+  PDC.KRunner.Conf{PDC.KRunner.Conf outputStr outputStrLn pdc_def_dir pdc_msgl_dir pdc_prog_dir run_k_debug}
+  PDC.KRunner.Format{PDC.KRunner.TextFormat PDC.KRunner.XMLFormat}
+  PDC.KRunner.Session{PDC.KRunner.Session kompile_stderr kompile_stdout krun_stderr krun_stdout}
+  PDC.KRunner.XML{PDC.KRunner.XML}
+module dependencies: PDC.KFormat
+package dependencies: List-0.6.0@List-0.6.0-DSUjtMs8rH1JPyUMelwlu3
+                      Win32-2.3.1.1@Win32-2.3.1.1 array-0.5.1.1@array-0.5.1.1
+                      base-4.9.1.0 binary-0.8.3.0@binary-0.8.3.0
+                      bytestring-0.10.8.1@bytestring-0.10.8.1
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 directory-1.3.0.0@directory-1.3.0.0
+                      filepath-1.4.1.1@filepath-1.4.1.1 ghc-prim-0.5.0.0
+                      hexpat-0.20.10@hexpat-0.20.10-3SLGNXFFsp0H1mHPWXdYY
+                      integer-gmp-1.0.0.1
+                      language-pdc-0.1.0.0@language-pdc-0.1.0.0-4olkbBRYHrvBnFC7Bq9OkB
+                      mtl-2.2.1@mtl-2.2.1-BLKBelFsPB3BoFeSWSOYj6
+                      parsec-3.1.11@parsec-3.1.11-113irVHGgd88sRnywByDNw
+                      process-1.4.3.0@process-1.4.3.0
+                      text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR
+                      time-1.6.0.1@time-1.6.0.1 transformers-0.5.2.0@transformers-0.5.2.0
+                      utf8-string-1.0.1.1@utf8-string-1.0.1.1-1DpjxLeTvGg7ttZZojxJR5
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+         binary-0.8.3.0@binary-0.8.3.0:Data.Binary.Generic
+         bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Builder
+         text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text
+         text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text.Lazy
+         text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text.Show
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+family instance modules: List-0.6.0@List-0.6.0-DSUjtMs8rH1JPyUMelwlu3:Data.List.Class
+                         base-4.9.1.0:Control.Applicative base-4.9.1.0:Data.Complex
+                         base-4.9.1.0:Data.Either base-4.9.1.0:Data.Functor.Const
+                         base-4.9.1.0:Data.Functor.Identity base-4.9.1.0:Data.List.NonEmpty
+                         base-4.9.1.0:Data.Monoid base-4.9.1.0:Data.Semigroup
+                         base-4.9.1.0:Data.Type.Equality base-4.9.1.0:Data.Version
+                         base-4.9.1.0:Data.Void base-4.9.1.0:GHC.Exts
+                         base-4.9.1.0:GHC.Generics base-4.9.1.0:GHC.IO.Exception
+                         base-4.9.1.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntMap.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntSet.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         hexpat-0.20.10@hexpat-0.20.10-3SLGNXFFsp0H1mHPWXdYY:Text.XML.Expat.Tree
+                         text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text
+                         text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text.Lazy
+import  -/  base-4.9.1.0:Control.Monad f915f187cea611986ebb12dbc69279ab
+import  -/  base-4.9.1.0:Data.Either 186ef9adf6b47e24f39efe9b2e18e352
+import  -/  base-4.9.1.0:Data.Functor 682cc832c233b71cec70179490a08631
+import  -/  base-4.9.1.0:Data.List 7349774f430841349c90dfd1144aea97
+import  -/  base-4.9.1.0:Data.Maybe ecf0c6f81372d9b58b142d5e758ea51b
+import  -/  base-4.9.1.0:Data.OldList c9282ee91951bdcbd918d2960562c007
+import  -/  base-4.9.1.0:Data.Traversable 078621b399ac9374b02f3f2ce55a08e9
+import  -/  base-4.9.1.0:GHC.Base 4caea1123ecf4b46e27cbccd6d279377
+import  -/  base-4.9.1.0:GHC.Err 20faef8829fd13c027d0ee2213637534
+import  -/  base-4.9.1.0:GHC.IO 4d461f9283683225c61e68db403481ad
+import  -/  base-4.9.1.0:GHC.IO.Handle cb8bbcf28331624bf008e1abd21fcddd
+import  -/  base-4.9.1.0:GHC.IO.Handle.FD 13bd8641d665b1ca96fbeeb8bdfa3638
+import  -/  base-4.9.1.0:GHC.IO.Handle.Text e0147bd867839fcc2c3f2eace90b4d47
+import  -/  base-4.9.1.0:GHC.IO.IOMode 1d36b5ec8d1a8ce9c868319c0a88f401
+import  -/  base-4.9.1.0:GHC.List d11eb227c1c6fbfd89bb781d72eaea0d
+import  -/  base-4.9.1.0:GHC.Show eca5834daba3b6a2bbbe64ab52056707
+import  -/  base-4.9.1.0:Prelude 74b3e204395920329f6de9d97206abe9
+import  -/  base-4.9.1.0:System.Environment 438c0b0bc0f94461b9c946d062a7eab9
+import  -/  base-4.9.1.0:System.IO 5daf3f384209c11d9566e3409af8ec5d
+import  -/  bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Lazy.Char8 9dc8b6278321ad88a4601372f94916b0
+import  -/  deepseq-1.4.2.0@deepseq-1.4.2.0:Control.DeepSeq 7a5b603de1057f23dbe1ce66fef1d110
+import  -/  directory-1.3.0.0@directory-1.3.0.0:System.Directory 4f448ef742f586f293d03ae3d978f8f8
+import  -/  filepath-1.4.1.1@filepath-1.4.1.1:System.FilePath a1833828b05bb217a8b2e2d074b495d5
+import  -/  filepath-1.4.1.1@filepath-1.4.1.1:System.FilePath.Windows b4b001429c398371f849fd86171ef213
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 16d48e012d23eaef9bca91ccdd572c02
+import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
+import  -/  hexpat-0.20.10@hexpat-0.20.10-3SLGNXFFsp0H1mHPWXdYY:Text.XML.Expat.Format 989cd8db9c28c663dc51d41a571ab760
+import  -/  hexpat-0.20.10@hexpat-0.20.10-3SLGNXFFsp0H1mHPWXdYY:Text.XML.Expat.Internal.IO c335018ed297aad64510e9fb9ff90ee8
+import  -/  hexpat-0.20.10@hexpat-0.20.10-3SLGNXFFsp0H1mHPWXdYY:Text.XML.Expat.Internal.NodeClass 4ff8f670f1397a37960a5c6d7adb4e28
+import  -/  hexpat-0.20.10@hexpat-0.20.10-3SLGNXFFsp0H1mHPWXdYY:Text.XML.Expat.Proc 8f1abee7458cd3aa17786975ded055a8
+import  -/  hexpat-0.20.10@hexpat-0.20.10-3SLGNXFFsp0H1mHPWXdYY:Text.XML.Expat.SAX ddba1bbb932d4fd1f26c4d023962e790
+import  -/  hexpat-0.20.10@hexpat-0.20.10-3SLGNXFFsp0H1mHPWXdYY:Text.XML.Expat.Tree c3298f840c4a3112edf6985682bdb973
+import  -/  PDC.KFormat 7cb0e07f6d90414e69e491289c7480ba
+  exports: 824de33e955417694116476dd55938e6
+  kFormat 59fbd316014fac23701d3620445079fa
+  kFormatIO c2a7d12eb4c5def3b20218145a73ea98
+import  -/  process-1.4.3.0@process-1.4.3.0:System.Process a5ad99a36dce991f91acda62fde4ec76
+19e1617c1a755f6efd0b00f844a94248
+  $fEqXML :: GHC.Classes.Eq PDC.KRunner.XML
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ PDC.KRunner.XML
+                  PDC.KRunner.$fEqXML_$c==
+                  PDC.KRunner.$fEqXML_$c/= -}
+e308f5265451483654e6cd5a4199dc79
+  $fEqXML1 :: GHC.Classes.Eq GHC.Base.String
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True)
+                GHC.Classes.$fEq[]_$s$fEq[]1 -}
+2595116dfb653a0bb4cd862cfed371ab
+  $fEqXML2 ::
+    Text.XML.Expat.Tree.NodeG [] [GHC.Types.Char] [GHC.Types.Char]
+    -> Text.XML.Expat.Tree.NodeG [] [GHC.Types.Char] [GHC.Types.Char]
+    -> GHC.Types.Bool
+  {- Unfolding: (Text.XML.Expat.Tree.$fEqNodeG_$c==
+                   @ [GHC.Types.Char]
+                   @ [GHC.Types.Char]
+                   GHC.Classes.$fEq[]_$s$fEq[]1
+                   GHC.Classes.$fEq[]_$s$fEq[]1) -}
+19e1617c1a755f6efd0b00f844a94248
+  $fEqXML_$c/= ::
+    PDC.KRunner.XML -> PDC.KRunner.XML -> GHC.Types.Bool
+  {- Arity: 2, Strictness: <L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                PDC.KRunner.$fEqXML_$s$fEqNodeG_$c/=
+                  `cast`
+                (Sym (PDC.KRunner.N:XML[0])
+                 ->_R Sym (PDC.KRunner.N:XML[0])
+                 ->_R <GHC.Types.Bool>_R) -}
+19e1617c1a755f6efd0b00f844a94248
+  $fEqXML_$c== ::
+    PDC.KRunner.XML -> PDC.KRunner.XML -> GHC.Types.Bool
+  {- Unfolding: InlineRule (0, True, True)
+                PDC.KRunner.$fEqXML2
+                  `cast`
+                (Sym (PDC.KRunner.N:XML[0])
+                 ->_R Sym (PDC.KRunner.N:XML[0])
+                 ->_R <GHC.Types.Bool>_R) -}
+c9a4e3143a2a317e89351353b869cf00
+  $fEqXML_$s$fEqNodeG_$c/= ::
+    Text.XML.Expat.Tree.NodeG [] [GHC.Types.Char] [GHC.Types.Char]
+    -> Text.XML.Expat.Tree.NodeG [] [GHC.Types.Char] [GHC.Types.Char]
+    -> GHC.Types.Bool
+  {- Arity: 2, Strictness: <L,U><L,U>, Inline: INLINE (sat-args=2),
+     Unfolding: InlineRule (2, False, False)
+                (\ (x :: Text.XML.Expat.Tree.NodeG
+                           [] [GHC.Types.Char] [GHC.Types.Char])
+                   (y :: Text.XML.Expat.Tree.NodeG
+                           [] [GHC.Types.Char] [GHC.Types.Char]) ->
+                 GHC.Classes.not
+                   (Text.XML.Expat.Tree.$fEqNodeG_$c==
+                      @ [GHC.Types.Char]
+                      @ [GHC.Types.Char]
+                      PDC.KRunner.$fEqXML1
+                      PDC.KRunner.$fEqXML1
+                      x
+                      y)) -}
+19e1617c1a755f6efd0b00f844a94248
+  $fShowXML :: GHC.Show.Show PDC.KRunner.XML
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ PDC.KRunner.XML
+                  PDC.KRunner.$fShowXML_$cshowsPrec
+                  PDC.KRunner.$fShowXML_$cshow
+                  PDC.KRunner.$fShowXML_$cshowList -}
+19e1617c1a755f6efd0b00f844a94248
+  $fShowXML1 :: PDC.KRunner.XML -> GHC.Show.ShowS
+  {- Arity: 1,
+     Unfolding: (\ (w :: PDC.KRunner.XML) ->
+                 PDC.KRunner.$w$cshowsPrec 0# w) -}
+31f2f08f0caed4056d4255439554c329
+  $fShowXML2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "XML "#) -}
+19e1617c1a755f6efd0b00f844a94248
+  $fShowXML_$cshow :: PDC.KRunner.XML -> GHC.Base.String
+  {- Arity: 1, Strictness: <L,1*U>,
+     Unfolding: (\ (x :: PDC.KRunner.XML) ->
+                 GHC.Base.++
+                   @ GHC.Types.Char
+                   PDC.KRunner.$fShowXML2
+                   (Text.XML.Expat.Tree.$w$cshowsPrec
+                      @ [GHC.Types.Char]
+                      @ [GHC.Types.Char]
+                      GHC.Show.$fShow[]_$s$fShow[]1
+                      GHC.Show.$fShow[]_$s$fShow[]1
+                      11#
+                      x `cast` (PDC.KRunner.N:XML[0])
+                      (GHC.Types.[] @ GHC.Types.Char))) -}
+19e1617c1a755f6efd0b00f844a94248
+  $fShowXML_$cshowList :: [PDC.KRunner.XML] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ PDC.KRunner.XML
+                   PDC.KRunner.$fShowXML1) -}
+19e1617c1a755f6efd0b00f844a94248
+  $fShowXML_$cshowsPrec ::
+    GHC.Types.Int -> PDC.KRunner.XML -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S(S),1*U(U)><L,1*U>, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: GHC.Types.Int) (w1 :: PDC.KRunner.XML) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 PDC.KRunner.$w$cshowsPrec ww1 w1 }) -}
+11ab1b3965004fdc44e91aaca1b45b35
+  $s$fNodeClassNodeGc ::
+    Text.XML.Expat.Internal.NodeClass.NodeClass
+      Text.XML.Expat.Tree.NodeG []
+  {- Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Text.XML.Expat.Tree.NodeG
+                  @ []
+                  PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cp1NodeClass
+                  PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cp2NodeClass
+                  PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cisElement
+                  PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cisText
+                  PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cisComment
+                  PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cisComment
+                  PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cisComment
+                  (Text.XML.Expat.Tree.$fNodeClassNodeGc_$ctextContentM
+                     @ []
+                     GHC.Base.$fFunctor[]
+                     Data.List.Class.$fList[])
+                  PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cisNamed
+                  PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cgetName
+                  PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$chasTarget
+                  PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cgetTarget
+                  PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cgetAttributes
+                  PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cgetChildren
+                  PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cgetText
+                  PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cmodifyName
+                  PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cmodifyAttributes
+                  PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cmodifyChildren
+                  PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cmodifyElement
+                  (Text.XML.Expat.Tree.$fNodeClassNodeGc_$cmapAllTags
+                     @ []
+                     GHC.Base.$fFunctor[]
+                     Data.List.Class.$fList[])
+                  (Text.XML.Expat.Tree.$fNodeClassNodeGc_$cmapNodeContainer
+                     @ []
+                     GHC.Base.$fFunctor[]
+                     Data.List.Class.$fList[])
+                  PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cmkText -}
+526f278001cbc67cdc554dd60501a0a2
+  $s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cgetAttributes ::
+    Text.XML.Expat.Tree.NodeG [] tag text -> [(tag, text)]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ tag @ text (ds1 :: Text.XML.Expat.Tree.NodeG [] tag text) ->
+                 case ds1 of wild {
+                   Text.XML.Expat.Tree.Element ds2 attrs ds3 -> attrs
+                   Text.XML.Expat.Tree.Text ds2 -> GHC.Types.[] @ (tag, text) }) -}
+ef79e0ed515deaaeb9d27d96e048d790
+  $s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cgetChildren ::
+    Text.XML.Expat.Tree.NodeG [] tag text
+    -> [Text.XML.Expat.Tree.NodeG [] tag text]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ tag @ text (eta :: Text.XML.Expat.Tree.NodeG [] tag text) ->
+                 case eta of wild {
+                   Text.XML.Expat.Tree.Element ds1 ds2 ch -> ch
+                   Text.XML.Expat.Tree.Text ds1
+                   -> GHC.Base.$fMonadPlus[]_$cmzero
+                        @ (Text.XML.Expat.Tree.NodeG [] tag text) }) -}
+7a4e182ec328a7972e7ae8b680380b19
+  $s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cgetName ::
+    GHC.Base.Monoid tag => Text.XML.Expat.Tree.NodeG [] tag text -> tag
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*U(1*U,A,A)><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ tag
+                   @ text
+                   ($dMonoid :: GHC.Base.Monoid tag)
+                   (ds1 :: Text.XML.Expat.Tree.NodeG [] tag text) ->
+                 case ds1 of wild {
+                   Text.XML.Expat.Tree.Element name ds2 ds3 -> name
+                   Text.XML.Expat.Tree.Text ds2
+                   -> GHC.Base.mempty @ tag $dMonoid }) -}
+997da403dc4d2de7ae7bfb1038bd00a7
+  $s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cgetTarget ::
+    GHC.Base.Monoid text =>
+    Text.XML.Expat.Tree.NodeG [] tag text -> text
+  {- Arity: 2, HasNoCafRefs, Strictness: <S(SLL),1*U(1*U,A,A)><L,A>,
+     Unfolding: InlineRule (2, True, True)
+                (\ @ text
+                   @ tag
+                   ($dMonoid :: GHC.Base.Monoid text)
+                   (ds1 :: Text.XML.Expat.Tree.NodeG [] tag text) ->
+                 GHC.Base.mempty @ text $dMonoid) -}
+3e2abdb40be28517d538e2d8fb2b9c57
+  $s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cgetText ::
+    GHC.Base.Monoid text =>
+    Text.XML.Expat.Tree.NodeG [] tag text -> text
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*U(1*U,A,A)><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ text
+                   @ tag
+                   ($dMonoid :: GHC.Base.Monoid text)
+                   (ds1 :: Text.XML.Expat.Tree.NodeG [] tag text) ->
+                 case ds1 of wild {
+                   Text.XML.Expat.Tree.Element ds2 ds3 ds4
+                   -> GHC.Base.mempty @ text $dMonoid
+                   Text.XML.Expat.Tree.Text txt -> txt }) -}
+1f79bb58ef7ffee3a2d209886e867ca6
+  $s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$chasTarget ::
+    GHC.Classes.Eq text =>
+    text -> Text.XML.Expat.Tree.NodeG [] tag text -> GHC.Types.Bool
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,A><L,A><L,A>,
+     Unfolding: InlineRule (3, True, True)
+                (\ @ text
+                   @ tag
+                   ($dEq :: GHC.Classes.Eq text)
+                   (ds1 :: text)
+                   (ds2 :: Text.XML.Expat.Tree.NodeG [] tag text) ->
+                 GHC.Types.False) -}
+f45b15f0c90ffc660279c2752610ebca
+  $s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cisComment ::
+    Text.XML.Expat.Tree.NodeG [] tag text -> GHC.Types.Bool
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ @ tag @ text (ds1 :: Text.XML.Expat.Tree.NodeG [] tag text) ->
+                 GHC.Types.False) -}
+e81d362abc85a50116f6eb9a64d4d91c
+  $s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cisElement ::
+    Text.XML.Expat.Tree.NodeG [] tag text -> GHC.Types.Bool
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ tag @ text (ds1 :: Text.XML.Expat.Tree.NodeG [] tag text) ->
+                 case ds1 of wild {
+                   Text.XML.Expat.Tree.Element ds2 ds3 ds4 -> GHC.Types.True
+                   Text.XML.Expat.Tree.Text ipv -> GHC.Types.False }) -}
+bb808d85c30c8b49ce30e06794942de0
+  $s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cisNamed ::
+    GHC.Classes.Eq tag =>
+    tag -> Text.XML.Expat.Tree.NodeG [] tag text -> GHC.Types.Bool
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,1*U(1*C1(C1(U)),A)><L,U><S,1*U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ tag
+                   @ text
+                   ($dEq :: GHC.Classes.Eq tag)
+                   (ds1 :: tag)
+                   (ds2 :: Text.XML.Expat.Tree.NodeG [] tag text) ->
+                 case ds2 of wild {
+                   Text.XML.Expat.Tree.Element nm' ds3 ds4
+                   -> GHC.Classes.== @ tag $dEq ds1 nm'
+                   Text.XML.Expat.Tree.Text ds3 -> GHC.Types.False }) -}
+726226a216b06e615ec4fb4daed98066
+  $s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cisText ::
+    Text.XML.Expat.Tree.NodeG [] tag text -> GHC.Types.Bool
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ tag @ text (ds1 :: Text.XML.Expat.Tree.NodeG [] tag text) ->
+                 case ds1 of wild {
+                   Text.XML.Expat.Tree.Element ipv ipv1 ipv2 -> GHC.Types.False
+                   Text.XML.Expat.Tree.Text ds2 -> GHC.Types.True }) -}
+a2056576a5e7517d5ec0f9caf63db660
+  $s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cmkText ::
+    text -> Text.XML.Expat.Tree.NodeG [] tag text
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,U>m2,
+     Unfolding: InlineRule (0, True, True)
+                (\ @ text @ tag (eta :: text) ->
+                 Text.XML.Expat.Tree.$WText @ [] @ tag @ text eta) -}
+dd5f595b0be41e6ef5c118bdf8c770e9
+  $s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cmodifyAttributes ::
+    ([(tag, text)] -> [(tag, text)])
+    -> Text.XML.Expat.Tree.NodeG [] tag text
+    -> Text.XML.Expat.Tree.NodeG [] tag text
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*C1(U)><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ tag
+                   @ text
+                   (ds1 :: [(tag, text)] -> [(tag, text)])
+                   (node :: Text.XML.Expat.Tree.NodeG [] tag text) ->
+                 case node of wild {
+                   Text.XML.Expat.Tree.Element n a c1
+                   -> case ds1 a of dt1 { DEFAULT ->
+                      Text.XML.Expat.Tree.Element @ [] @ tag @ text n dt1 c1 }
+                   Text.XML.Expat.Tree.Text ds2 -> wild }) -}
+2a9bc203133493f1167877373a11d629
+  $s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cmodifyChildren ::
+    ([Text.XML.Expat.Tree.NodeG [] tag text]
+     -> [Text.XML.Expat.Tree.NodeG [] tag text])
+    -> Text.XML.Expat.Tree.NodeG [] tag text
+    -> Text.XML.Expat.Tree.NodeG [] tag text
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*C1(U)><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ tag
+                   @ text
+                   (ds1 :: [Text.XML.Expat.Tree.NodeG [] tag text]
+                           -> [Text.XML.Expat.Tree.NodeG [] tag text])
+                   (node :: Text.XML.Expat.Tree.NodeG [] tag text) ->
+                 case node of wild {
+                   Text.XML.Expat.Tree.Element n a c1
+                   -> Text.XML.Expat.Tree.Element @ [] @ tag @ text n a (ds1 c1)
+                   Text.XML.Expat.Tree.Text ds2 -> wild }) -}
+fff944c6f13fca53a8fdf296186b5c2f
+  $s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cmodifyElement ::
+    ((tag, [(tag, text)], [Text.XML.Expat.Tree.NodeG [] tag text])
+     -> (tag', [(tag', text)],
+         [Text.XML.Expat.Tree.NodeG [] tag' text]))
+    -> Text.XML.Expat.Tree.NodeG [] tag text
+    -> Text.XML.Expat.Tree.NodeG [] tag' text
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,1*C1(U(1*U,1*U,U))><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ tag
+                   @ text
+                   @ tag'
+                   (ds1 :: (tag, [(tag, text)],
+                            [Text.XML.Expat.Tree.NodeG [] tag text])
+                           -> (tag', [(tag', text)],
+                               [Text.XML.Expat.Tree.NodeG [] tag' text]))
+                   (ds2 :: Text.XML.Expat.Tree.NodeG [] tag text) ->
+                 case ds2 of wild {
+                   Text.XML.Expat.Tree.Element n a c1
+                   -> case ds1 (n, a, c1) of wild1 { (,,) n' a' c' ->
+                      case n' of dt1 { DEFAULT ->
+                      case a' of dt2 { DEFAULT ->
+                      Text.XML.Expat.Tree.Element @ [] @ tag' @ text dt1 dt2 c' } } }
+                   Text.XML.Expat.Tree.Text t
+                   -> Text.XML.Expat.Tree.Text @ [] @ tag' @ text t }) -}
+174093a96da082abe378923c7c491213
+  $s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cmodifyName ::
+    (tag -> tag)
+    -> Text.XML.Expat.Tree.NodeG [] tag text
+    -> Text.XML.Expat.Tree.NodeG [] tag text
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*C1(U)><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ tag
+                   @ text
+                   (ds1 :: tag -> tag)
+                   (node :: Text.XML.Expat.Tree.NodeG [] tag text) ->
+                 case node of wild {
+                   Text.XML.Expat.Tree.Element n a c1
+                   -> case ds1 n of dt1 { DEFAULT ->
+                      Text.XML.Expat.Tree.Element @ [] @ tag @ text dt1 a c1 }
+                   Text.XML.Expat.Tree.Text ds2 -> wild }) -}
+944f60e91d1ae1e18aa5b3d52ad93309
+  $s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cp1NodeClass ::
+    GHC.Base.Functor []
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True) GHC.Base.$fFunctor[] -}
+f2f57ba18f4cae6b9e9ac36291db4c18
+  $s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cp2NodeClass ::
+    Data.List.Class.List []
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True) Data.List.Class.$fList[] -}
+aee664398766b624bca68c3fb00ce623
+  $tc'Conf :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   13752332143298801110##
+                   8999507154165234960##
+                   PDC.KRunner.$trModule
+                   PDC.KRunner.$tc'Conf1) -}
+7c2ff9f2b62b799092ba75724fec504f
+  $tc'Conf1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Conf"#) -}
+888e3c13959f17fe8922f3c280551944
+  $tc'Session :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   12608283897589002981##
+                   488811783028667164##
+                   PDC.KRunner.$trModule
+                   PDC.KRunner.$tc'Session1) -}
+1d90b8f01c75e437b4c515c9d7e1d7cf
+  $tc'Session1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Session"#) -}
+910073f187be871b23d78e2c72eee726
+  $tc'TextFormat :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   17736257080487980306##
+                   790779833720746039##
+                   PDC.KRunner.$trModule
+                   PDC.KRunner.$tc'TextFormat1) -}
+e2bbf1d41ccf347b4b864da1325eb557
+  $tc'TextFormat1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'TextFormat"#) -}
+04d9c3f7ce53cfb814cf12630b660b31
+  $tc'XML :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   3936643852996184291##
+                   5494420649315943478##
+                   PDC.KRunner.$trModule
+                   PDC.KRunner.$tc'XML1) -}
+83cd5731858a0b48cac33c83a88616d3
+  $tc'XML1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'XML"#) -}
+c92985d8243df9d7cf09c9cce9ca1af7
+  $tc'XMLFormat :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   2277081187491974460##
+                   3150012961610244110##
+                   PDC.KRunner.$trModule
+                   PDC.KRunner.$tc'XMLFormat1) -}
+8c399fa5b6a74d8a1956390e1731693d
+  $tc'XMLFormat1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'XMLFormat"#) -}
+55ed6616ba2147563cd8794942f36c6d
+  $tcConf :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   9583931728732502893##
+                   11704481293142599762##
+                   PDC.KRunner.$trModule
+                   PDC.KRunner.$tcConf1) -}
+241952ca286ffd68e77dd1a8dd59a0a1
+  $tcConf1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Conf"#) -}
+e8c3fa6e18be8e339bde20d048a34cfd
+  $tcFormat :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   929772485124281550##
+                   15668178113567616005##
+                   PDC.KRunner.$trModule
+                   PDC.KRunner.$tcFormat1) -}
+4f09d5645ee217164525e369b06d65b3
+  $tcFormat1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Format"#) -}
+651fd01f9582b8b41ae9594519a141d9
+  $tcSession :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   10128332418093069662##
+                   12690297483913946990##
+                   PDC.KRunner.$trModule
+                   PDC.KRunner.$tcSession1) -}
+25c25f9dcc434e03cc9811bd38316844
+  $tcSession1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Session"#) -}
+767f0c674123270814240f0de7f72200
+  $tcXML :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   17578174022499226721##
+                   8299643780966745899##
+                   PDC.KRunner.$trModule
+                   PDC.KRunner.$tcXML1) -}
+9cdf3a6d6ee20ce95b2ce58ba5ef478c
+  $tcXML1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "XML"#) -}
+2c88ccfa6f7e8230c173219c07764fb3
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   PDC.KRunner.$trModule2
+                   PDC.KRunner.$trModule1) -}
+ebdb038f7999ae9bae3fa7d463f5cc48
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "PDC.KRunner"#) -}
+894797cf245d99834a5c3001e38fea10
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+19e1617c1a755f6efd0b00f844a94248
+  $w$cshowsPrec :: GHC.Prim.Int# -> PDC.KRunner.XML -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,U><L,1*U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#) (w :: PDC.KRunner.XML) ->
+                 let {
+                   g :: GHC.Base.String -> GHC.Base.String
+                   = Text.XML.Expat.Tree.$w$cshowsPrec
+                       @ [GHC.Types.Char]
+                       @ [GHC.Types.Char]
+                       GHC.Show.$fShow[]_$s$fShow[]1
+                       GHC.Show.$fShow[]_$s$fShow[]1
+                       11#
+                       w `cast` (PDC.KRunner.N:XML[0])
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11#) of wild {
+                   GHC.Types.False
+                   -> \ (x :: GHC.Base.String) ->
+                      GHC.Base.++ @ GHC.Types.Char PDC.KRunner.$fShowXML2 (g x)
+                   GHC.Types.True
+                   -> \ (x :: GHC.Base.String) ->
+                      GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows7
+                        (GHC.Base.++
+                           @ GHC.Types.Char
+                           PDC.KRunner.$fShowXML2
+                           (g (GHC.Types.: @ GHC.Types.Char GHC.Show.shows4 x))) }) -}
+7d6a94eee848f52af5193373ce65a56b
+  $wcut ::
+    GHC.Base.String
+    -> GHC.Base.String -> (# GHC.Base.String, GHC.Base.String #)
+  {- Arity: 2, Strictness: <L,U><S,1*U>, Inline: [0] -}
+19fa64179c421e17d39c1b1b09094a6f
+  $wpc ::
+    GHC.Base.String
+    -> GHC.Base.String
+    -> GHC.Base.String
+    -> (GHC.Base.String -> GHC.Types.IO ())
+    -> (GHC.Base.String -> GHC.Types.IO ())
+    -> GHC.Types.Bool
+    -> [[GHC.Base.String]]
+    -> (# GHC.Base.String, GHC.Base.String, GHC.Base.String,
+          GHC.Base.String -> GHC.Types.IO (),
+          GHC.Base.String -> GHC.Types.IO (), GHC.Types.Bool #)
+  {- Arity: 7, Strictness: <L,U><L,U><L,U><L,U><L,U><L,U><S,1*U>,
+     Inline: [0] -}
+a42ca0767332418b55fe272c3df3c98f
+  $wrunCmd ::
+    (GHC.Base.String -> GHC.Types.IO ())
+    -> (GHC.Base.String -> GHC.Types.IO ())
+    -> PDC.KRunner.Format
+    -> GHC.Base.String
+    -> GHC.Base.String
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          (GHC.Types.Bool, Text.XML.Expat.Tree.UNode GHC.Base.String,
+           GHC.Base.String, GHC.Base.String) #)
+  {- Arity: 6,
+     Strictness: <C(C(S(SL))),1*C1(C1(U(U,A)))><L,C(C1(U(U,A)))><L,1*U><L,U><L,U><S,U>,
+     Inline: [0] -}
+c0f363a7e7a83a9ea35562bf3de0d89b
+  data Conf
+    = Conf {pdc_def_dir :: GHC.Base.String,
+            pdc_prog_dir :: GHC.Base.String,
+            pdc_msgl_dir :: GHC.Base.String,
+            outputStr :: GHC.Base.String -> GHC.Types.IO (),
+            outputStrLn :: GHC.Base.String -> GHC.Types.IO (),
+            run_k_debug :: GHC.Types.Bool}
+ff42ddcebf8d0b1ee7424a4edef6cbb1
+  data Format = TextFormat | XMLFormat
+b7c93e2bd7d2b543b481c0987abd4629
+  data Session
+    = Session {kompile_stdout :: GHC.Base.String,
+               kompile_stderr :: GHC.Base.String,
+               krun_stdout :: Text.XML.Expat.Tree.UNode GHC.Base.String,
+               krun_stderr :: GHC.Base.String}
+19e1617c1a755f6efd0b00f844a94248
+  newtype XML = XML (Text.XML.Expat.Tree.UNode GHC.Base.String)
+18e62327b632219e2f3c1452b727de57
+  deleteExposed ::
+    PDC.KRunner.Conf -> GHC.Base.String -> GHC.Types.IO ()
+  {- Arity: 3,
+     Unfolding: InlineRule (0, True, True)
+                PDC.KRunner.deleteExposed1
+                  `cast`
+                (<PDC.KRunner.Conf>_R
+                 ->_R <GHC.Base.String>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
+d56104f2cecc81af2a675991b93bce8f
+  deleteExposed1 ::
+    PDC.KRunner.Conf
+    -> GHC.Base.String
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 3,
+     Unfolding: (PDC.KRunner.deleteExposed3
+                   PDC.KRunner.deleteExposed2) -}
+9267199744c997124c571b0b1bb845c1
+  deleteExposed2 ::
+    GHC.IO.FilePath -> GHC.Base.String -> GHC.Types.IO ()
+  {- Arity: 2, Strictness: <L,U><L,A>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (fn :: GHC.IO.FilePath) (ds1 :: GHC.Base.String) ->
+                 System.Win32.File.deleteFile fn) -}
+edee196b9ea77e7ad1cd55277f71d77d
+  deleteExposed3 ::
+    (GHC.IO.FilePath -> GHC.Base.String -> GHC.Types.IO ())
+    -> PDC.KRunner.Conf
+    -> GHC.Base.String
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 4,
+     Strictness: <L,C(C1(C1(U(U,U))))><L,1*U(A,1*U,A,A,A,A)><L,1*U><S,U> -}
+d3e67164c766a369c7cfd1ee48d6a307
+  dowork ::
+    [GHC.Types.Char]
+    -> [GHC.Types.Char]
+    -> GHC.Base.Maybe GHC.Types.Bool
+    -> [GHC.Base.String]
+    -> GHC.Types.IO PDC.KRunner.Session
+  {- Arity: 5, Strictness: <L,1*U><L,1*U><L,1*U><L,1*U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                PDC.KRunner.dowork1
+                  `cast`
+                (<[GHC.Types.Char]>_R
+                 ->_R <[GHC.Types.Char]>_R
+                 ->_R <GHC.Base.Maybe GHC.Types.Bool>_R
+                 ->_R <[GHC.Base.String]>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <PDC.KRunner.Session>_R)) -}
+a8e14f141ed0aafe109b6cd55211fcf8
+  dowork1 ::
+    [GHC.Types.Char]
+    -> [GHC.Types.Char]
+    -> GHC.Base.Maybe GHC.Types.Bool
+    -> [GHC.Base.String]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, PDC.KRunner.Session #)
+  {- Arity: 5, Strictness: <L,1*U><L,1*U><L,1*U><L,1*U><S,U> -}
+fac67348da8a7c43df28bdecf773ee02
+  expose :: PDC.KRunner.Conf -> GHC.Base.String -> GHC.Types.IO ()
+  {- Arity: 3,
+     Unfolding: InlineRule (0, True, True)
+                PDC.KRunner.expose1
+                  `cast`
+                (<PDC.KRunner.Conf>_R
+                 ->_R <GHC.Base.String>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
+ea97e8217ec9a1aac5e6a8e74c36ebb6
+  expose1 ::
+    PDC.KRunner.Conf
+    -> GHC.Base.String
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 3,
+     Unfolding: (PDC.KRunner.deleteExposed3
+                   System.IO.writeFile1
+                     `cast`
+                   (<GHC.IO.FilePath>_R
+                    ->_R <GHC.Base.String>_R
+                    ->_R Sym (GHC.Types.N:IO[0] <()>_R))) -}
+132601c773bec1add6820f34e3a97601
+  genericExpose ::
+    (GHC.IO.FilePath -> GHC.Base.String -> GHC.Types.IO ())
+    -> PDC.KRunner.Conf -> GHC.Base.String -> GHC.Types.IO ()
+  {- Arity: 4,
+     Strictness: <L,C(C1(C1(U(U,U))))><L,1*U(A,1*U,A,A,A,A)><L,1*U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                PDC.KRunner.deleteExposed3
+                  `cast`
+                (<GHC.IO.FilePath -> GHC.Base.String -> GHC.Types.IO ()>_R
+                 ->_R <PDC.KRunner.Conf>_R
+                 ->_R <GHC.Base.String>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
+d7d6623e84562330c95e2b6d1316b5b3
+  getBy ::
+    PDC.KRunner.XML
+    -> GHC.Base.String -> GHC.Base.Maybe GHC.Base.String
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: (\ (ds1 :: PDC.KRunner.XML) (name :: GHC.Base.String) ->
+                 case ds1 `cast` (PDC.KRunner.N:XML[0]) of wild {
+                   Text.XML.Expat.Tree.Element ds2 ds3 ds4
+                   -> let {
+                        lvl31 :: GHC.Types.Bool
+                        = GHC.Base.eqString name (GHC.Types.[] @ GHC.Types.Char)
+                      } in
+                      case Text.XML.Expat.Proc.filterElements
+                             @ Text.XML.Expat.Tree.NodeG
+                             @ []
+                             @ GHC.Base.String
+                             @ GHC.Base.String
+                             PDC.KRunner.$s$fNodeClassNodeGc
+                             (\ (x :: Text.XML.Expat.Tree.NodeG
+                                        [] GHC.Base.String GHC.Base.String) ->
+                              case x of wild1 {
+                                Text.XML.Expat.Tree.Element name1 ds5 ds6
+                                -> GHC.Base.eqString name name1
+                                Text.XML.Expat.Tree.Text ds5 -> lvl31 })
+                             wild of wild1 {
+                        [] -> GHC.Base.Nothing @ GHC.Base.String
+                        : a1 ds5
+                        -> GHC.Base.Just
+                             @ GHC.Base.String
+                             (Text.XML.Expat.Tree.$fNodeClassNodeGc_$ctextContentM
+                                @ []
+                                GHC.Base.$fFunctor[]
+                                Data.List.Class.$fList[]
+                                @ GHC.Base.String
+                                @ GHC.Base.String
+                                (GHC.Base.$fMonoid[] @ GHC.Types.Char)
+                                a1)
+                               `cast`
+                             (Trans
+                                  (Sub (Data.List.Class.D:R:ItemM[][0]) <GHC.Base.String>_N)
+                                  (Data.Functor.Identity.N:Identity[0] <GHC.Base.String>_R)) }
+                   Text.XML.Expat.Tree.Text ipv
+                   -> GHC.Base.Nothing @ GHC.Base.String }) -}
+13820d7a88289020901cdbefd3389314
+  getErrorCode ::
+    Text.XML.Expat.Tree.UNode GHC.Base.String
+    -> GHC.Base.Maybe GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (x :: Text.XML.Expat.Tree.NodeG
+                           [] [GHC.Types.Char] GHC.Base.String) ->
+                 case x of wild {
+                   Text.XML.Expat.Tree.Element ds1 ds2 ds3
+                   -> case Text.XML.Expat.Proc.filterElements
+                             @ Text.XML.Expat.Tree.NodeG
+                             @ []
+                             @ [GHC.Types.Char]
+                             @ GHC.Base.String
+                             PDC.KRunner.$s$fNodeClassNodeGc
+                             PDC.KRunner.getErrorCode1
+                             wild of wild1 {
+                        [] -> GHC.Base.Nothing @ GHC.Base.String
+                        : a1 ds4
+                        -> GHC.Base.Just
+                             @ GHC.Base.String
+                             (Text.XML.Expat.Tree.$fNodeClassNodeGc_$ctextContentM
+                                @ []
+                                GHC.Base.$fFunctor[]
+                                Data.List.Class.$fList[]
+                                @ GHC.Base.String
+                                @ [GHC.Types.Char]
+                                (GHC.Base.$fMonoid[] @ GHC.Types.Char)
+                                a1)
+                               `cast`
+                             (Trans
+                                  (Sub (Data.List.Class.D:R:ItemM[][0]) <GHC.Base.String>_N)
+                                  (Data.Functor.Identity.N:Identity[0] <GHC.Base.String>_R)) }
+                   Text.XML.Expat.Tree.Text ipv
+                   -> GHC.Base.Nothing @ GHC.Base.String }) -}
+87ba0f744921106c4e5e7b5b0ef95237
+  getErrorCode1 ::
+    Text.XML.Expat.Tree.NodeG [] [GHC.Types.Char] GHC.Base.String
+    -> GHC.Types.Bool
+  {- Arity: 1,
+     Unfolding: (\ (x :: Text.XML.Expat.Tree.NodeG
+                           [] [GHC.Types.Char] GHC.Base.String) ->
+                 case x of wild {
+                   Text.XML.Expat.Tree.Element name ds1 ds2
+                   -> GHC.Base.eqString PDC.KRunner.getErrorCode3 name
+                   Text.XML.Expat.Tree.Text ds1 -> PDC.KRunner.getErrorCode2 }) -}
+b88c59c7ed9e9140603f0cce0b604ce5
+  getErrorCode2 :: GHC.Types.Bool
+  {- Unfolding: (GHC.Base.eqString
+                   PDC.KRunner.getErrorCode3
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+4ff281c2676ac48f4e6fdf512b74db6e
+  getErrorCode3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "error-code"#) -}
+3baba68f92963f327cd130e944e0d6ac
+  getRunResult ::
+    Text.XML.Expat.Tree.UNode GHC.Base.String
+    -> GHC.Base.Maybe GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (x :: Text.XML.Expat.Tree.NodeG
+                           [] [GHC.Types.Char] GHC.Base.String) ->
+                 case x of wild {
+                   Text.XML.Expat.Tree.Element ds1 ds2 ds3
+                   -> case Text.XML.Expat.Proc.filterElements
+                             @ Text.XML.Expat.Tree.NodeG
+                             @ []
+                             @ [GHC.Types.Char]
+                             @ GHC.Base.String
+                             PDC.KRunner.$s$fNodeClassNodeGc
+                             PDC.KRunner.getRunResult1
+                             wild of wild1 {
+                        [] -> GHC.Base.Nothing @ GHC.Base.String
+                        : a1 ds4
+                        -> GHC.Base.Just
+                             @ GHC.Base.String
+                             (Text.XML.Expat.Tree.$fNodeClassNodeGc_$ctextContentM
+                                @ []
+                                GHC.Base.$fFunctor[]
+                                Data.List.Class.$fList[]
+                                @ GHC.Base.String
+                                @ [GHC.Types.Char]
+                                (GHC.Base.$fMonoid[] @ GHC.Types.Char)
+                                a1)
+                               `cast`
+                             (Trans
+                                  (Sub (Data.List.Class.D:R:ItemM[][0]) <GHC.Base.String>_N)
+                                  (Data.Functor.Identity.N:Identity[0] <GHC.Base.String>_R)) }
+                   Text.XML.Expat.Tree.Text ipv
+                   -> GHC.Base.Nothing @ GHC.Base.String }) -}
+3c07316ba5c1dad776ea9b61e9c22a26
+  getRunResult1 ::
+    Text.XML.Expat.Tree.NodeG [] [GHC.Types.Char] GHC.Base.String
+    -> GHC.Types.Bool
+  {- Arity: 1,
+     Unfolding: (\ (x :: Text.XML.Expat.Tree.NodeG
+                           [] [GHC.Types.Char] GHC.Base.String) ->
+                 case x of wild {
+                   Text.XML.Expat.Tree.Element name ds1 ds2
+                   -> GHC.Base.eqString PDC.KRunner.getRunResult3 name
+                   Text.XML.Expat.Tree.Text ds1 -> PDC.KRunner.getRunResult2 }) -}
+bfc68210e27d943aab07d06d077b737d
+  getRunResult2 :: GHC.Types.Bool
+  {- Unfolding: (GHC.Base.eqString
+                   PDC.KRunner.getRunResult3
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+d7b325bcb8315fb17563b0617bdb16fb
+  getRunResult3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "rulestatus"#) -}
+cb27335ca61c18ce61333bccc86e843b
+  help :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                PDC.KRunner.help1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+c464b7dd1b4371117fe990727da34d7a
+  help1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 GHC.IO.Handle.Text.hPutStr2
+                   GHC.IO.Handle.FD.stdout
+                   PDC.KRunner.help2
+                   GHC.Types.True
+                   eta) -}
+b2bfeff8ea00ed5486c4a1599f72f831
+  help2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "$ krunner k-file program [--delete-temp/--no-delete-temp] {include=file}*\n\
+                   \  swap the '&include& filnename' lines"#) -}
+a8cfc9a7c596bf779699a56eec9c0649
+  includeValue :: GHC.Base.String -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U> -}
+1db299f50e04bfc4bde9f73ef635677f
+  kompile_stderr :: PDC.KRunner.Session -> GHC.Base.String
+  RecSel Left PDC.KRunner.Session
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LSLL),1*U(A,1*U,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds1 :: PDC.KRunner.Session) ->
+                 case ds1 of wild { PDC.KRunner.Session ds2 ds3 ds4 ds5 -> ds3 }) -}
+457786c5562e4cf1e3ea0b44d178e7b3
+  kompile_stdout :: PDC.KRunner.Session -> GHC.Base.String
+  RecSel Left PDC.KRunner.Session
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SLLL),1*U(1*U,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds1 :: PDC.KRunner.Session) ->
+                 case ds1 of wild { PDC.KRunner.Session ds2 ds3 ds4 ds5 -> ds2 }) -}
+912d339ce536ec91ae2cf5011c6fda91
+  krun_stderr :: PDC.KRunner.Session -> GHC.Base.String
+  RecSel Left PDC.KRunner.Session
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LLLS),1*U(A,A,A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds1 :: PDC.KRunner.Session) ->
+                 case ds1 of wild { PDC.KRunner.Session ds2 ds3 ds4 ds5 -> ds5 }) -}
+7614a3b9cb445c16c67793c7bf99c60e
+  krun_stdout ::
+    PDC.KRunner.Session -> Text.XML.Expat.Tree.UNode GHC.Base.String
+  RecSel Left PDC.KRunner.Session
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LLSL),1*U(A,A,1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds1 :: PDC.KRunner.Session) ->
+                 case ds1 of wild { PDC.KRunner.Session ds2 ds3 ds4 ds5 -> ds4 }) -}
+24dc10e916387c1f8337421f53dae9f7
+  krunnerMain :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                PDC.KRunner.krunnerMain1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+bf517de589f21356eee93bdf7ae7876a
+  krunnerMain1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case System.Environment.getArgs2 s of ds1 { (#,#) ipv ipv1 ->
+                 case ipv1 of wild {
+                   GHC.Base.Nothing
+                   -> case GHC.Environment.getFullArgs1
+                             ipv of ds2 { (#,#) ipv2 ipv3 ->
+                      case System.Environment.dropRTSArgs ipv3 of wild1 {
+                        []
+                        -> case GHC.List.scanl2
+                           ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+                           of {}
+                        : ds3 xs -> PDC.KRunner.krunnerMain2 xs ipv2 } }
+                   GHC.Base.Just argv
+                   -> case argv of wild1 {
+                        []
+                        -> case GHC.List.scanl2
+                           ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+                           of {}
+                        : ds2 xs -> PDC.KRunner.krunnerMain2 xs ipv } } }) -}
+ad3f52befea32586694de131cc696f3d
+  krunnerMain2 ::
+    [GHC.Base.String]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <S,1*U><S,U>,
+     Unfolding: (\ (ds1 :: [GHC.Base.String])
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case ds1 of wild {
+                   []
+                   -> GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        PDC.KRunner.help2
+                        GHC.Types.True
+                        eta
+                   : k ds2
+                   -> case ds2 of wild1 {
+                        []
+                        -> GHC.IO.Handle.Text.hPutStr2
+                             GHC.IO.Handle.FD.stdout
+                             PDC.KRunner.help2
+                             GHC.Types.True
+                             eta
+                        : f ds3
+                        -> case ds3 of wild2 {
+                             []
+                             -> case PDC.KRunner.dowork1
+                                       k
+                                       f
+                                       (GHC.Base.Nothing @ GHC.Types.Bool)
+                                       (GHC.Types.[] @ GHC.Base.String)
+                                       eta of ds4 { (#,#) ipv ipv1 ->
+                                (# ipv, GHC.Tuple.() #) }
+                             : ds4 confs
+                             -> case GHC.Base.eqString ds4 PDC.KRunner.krunnerMain6 of wild3 {
+                                  GHC.Types.False
+                                  -> case GHC.Base.eqString ds4 PDC.KRunner.krunnerMain5 of wild4 {
+                                       GHC.Types.False
+                                       -> case PDC.KRunner.dowork1
+                                                 k
+                                                 f
+                                                 (GHC.Base.Nothing @ GHC.Types.Bool)
+                                                 wild2
+                                                 eta of ds5 { (#,#) ipv ipv1 ->
+                                          (# ipv, GHC.Tuple.() #) }
+                                       GHC.Types.True
+                                       -> case PDC.KRunner.dowork1
+                                                 k
+                                                 f
+                                                 PDC.KRunner.krunnerMain4
+                                                 confs
+                                                 eta of ds5 { (#,#) ipv ipv1 ->
+                                          (# ipv, GHC.Tuple.() #) } }
+                                  GHC.Types.True
+                                  -> case PDC.KRunner.dowork1
+                                            k
+                                            f
+                                            PDC.KRunner.krunnerMain3
+                                            confs
+                                            eta of ds5 { (#,#) ipv ipv1 ->
+                                     (# ipv, GHC.Tuple.() #) } } } } }) -}
+0502e94bd45384b73ccca958fbf8d86b
+  krunnerMain3 :: GHC.Base.Maybe GHC.Types.Bool
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Base.Just @ GHC.Types.Bool GHC.Types.True) -}
+090130f2fb2d1c6885850377effebfd4
+  krunnerMain4 :: GHC.Base.Maybe GHC.Types.Bool
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Base.Just @ GHC.Types.Bool GHC.Types.False) -}
+80aef03c7f1e3efe886f7b0ffc210b6a
+  krunnerMain5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "--no-delete-temp"#) -}
+73a76fba166910fc285f1d29c89988ac
+  krunnerMain6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "--delete-temp"#) -}
+6b356c81a845d986d3f675a67a45b198
+  outputStr :: PDC.KRunner.Conf -> GHC.Base.String -> GHC.Types.IO ()
+  RecSel Left PDC.KRunner.Conf
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLSLL),1*U(A,A,A,1*U,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds1 :: PDC.KRunner.Conf) ->
+                 case ds1 of wild { PDC.KRunner.Conf ds2 ds3 ds4 ds5 ds6 ds7 ->
+                 ds5 }) -}
+185dd98b0307e78d47746ffce239f6ee
+  outputStrLn ::
+    PDC.KRunner.Conf -> GHC.Base.String -> GHC.Types.IO ()
+  RecSel Left PDC.KRunner.Conf
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLSL),1*U(A,A,A,A,1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds1 :: PDC.KRunner.Conf) ->
+                 case ds1 of wild { PDC.KRunner.Conf ds2 ds3 ds4 ds5 ds6 ds7 ->
+                 ds6 }) -}
+62d0f5e59b75ada2b3213c8d6cb2b426
+  parseconf :: GHC.Base.String -> PDC.KRunner.Conf
+  {- Arity: 1, Strictness: <S,1*U>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: GHC.Base.String) ->
+                 PDC.KRunner.parseconf_pc
+                   PDC.KRunner.parseconf1
+                   (GHC.Base.build
+                      @ [GHC.Base.String]
+                      (\ @ b1
+                         (c :: [GHC.Base.String] -> b1 -> b1)[OneShot]
+                         (n :: b1)[OneShot] ->
+                       GHC.Base.foldr
+                         @ [GHC.Types.Char]
+                         @ b1
+                         (GHC.Base.mapFB
+                            @ [GHC.Base.String]
+                            @ b1
+                            @ [GHC.Types.Char]
+                            c
+                            Data.OldList.words)
+                         n
+                         (Data.OldList.lines x)))) -}
+5af9549ec837b9dae08320b76ad85155
+  parseconf1 :: PDC.KRunner.Conf
+  {- Strictness: m,
+     Unfolding: (PDC.KRunner.Conf
+                   (GHC.Types.[] @ GHC.Types.Char)
+                   (GHC.Types.[] @ GHC.Types.Char)
+                   (GHC.Types.[] @ GHC.Types.Char)
+                   System.IO.putStr1
+                     `cast`
+                   (<GHC.Base.String>_R ->_R Sym (GHC.Types.N:IO[0] <()>_R))
+                   System.IO.putStrLn1
+                     `cast`
+                   (<GHC.Base.String>_R ->_R Sym (GHC.Types.N:IO[0] <()>_R))
+                   GHC.Types.False) -}
+4b3467567d1a905a3b40100a02dcbe50
+  parseconf_pc ::
+    PDC.KRunner.Conf -> [[GHC.Base.String]] -> PDC.KRunner.Conf
+  {- Arity: 2, Strictness: <S,1*U(U,U,U,U,U,U)><S,1*U>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: PDC.KRunner.Conf) (w1 :: [[GHC.Base.String]]) ->
+                 case w of ww { PDC.KRunner.Conf ww1 ww2 ww3 ww4 ww5 ww6 ->
+                 case PDC.KRunner.$wpc
+                        ww1
+                        ww2
+                        ww3
+                        ww4
+                        ww5
+                        ww6
+                        w1 of ww7 { (#,,,,,#) ww8 ww9 ww10 ww11 ww12 ww13 ->
+                 PDC.KRunner.Conf ww8 ww9 ww10 ww11 ww12 ww13 } }) -}
+4a72e8c7c24b3e771c512b91f1df3caf
+  pdc_def_dir :: PDC.KRunner.Conf -> GHC.Base.String
+  RecSel Left PDC.KRunner.Conf
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(SLLLLL),1*U(1*U,A,A,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds1 :: PDC.KRunner.Conf) ->
+                 case ds1 of wild { PDC.KRunner.Conf ds2 ds3 ds4 ds5 ds6 ds7 ->
+                 ds2 }) -}
+4c82f4334cd5af1565054c22fc234379
+  pdc_msgl_dir :: PDC.KRunner.Conf -> GHC.Base.String
+  RecSel Left PDC.KRunner.Conf
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLSLLL),1*U(A,A,1*U,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds1 :: PDC.KRunner.Conf) ->
+                 case ds1 of wild { PDC.KRunner.Conf ds2 ds3 ds4 ds5 ds6 ds7 ->
+                 ds4 }) -}
+bee4454af98ac33e2a2b2d03e9ffd8d7
+  pdc_prog_dir :: PDC.KRunner.Conf -> GHC.Base.String
+  RecSel Left PDC.KRunner.Conf
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LSLLLL),1*U(A,1*U,A,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds1 :: PDC.KRunner.Conf) ->
+                 case ds1 of wild { PDC.KRunner.Conf ds2 ds3 ds4 ds5 ds6 ds7 ->
+                 ds3 }) -}
+f653d7aa54843246959df50d12efed51
+  preproc ::
+    GHC.Base.String
+    -> [Data.Either.Either GHC.Base.String GHC.Base.String]
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: GHC.Base.String) ->
+                 GHC.Base.build
+                   @ (Data.Either.Either [GHC.Types.Char] [GHC.Types.Char])
+                   (\ @ b1
+                      (c :: Data.Either.Either [GHC.Types.Char] [GHC.Types.Char]
+                            -> b1 -> b1)[OneShot]
+                      (n :: b1)[OneShot] ->
+                    GHC.Base.foldr
+                      @ [GHC.Types.Char]
+                      @ b1
+                      (GHC.Base.mapFB
+                         @ (Data.Either.Either [GHC.Types.Char] [GHC.Types.Char])
+                         @ b1
+                         @ [GHC.Types.Char]
+                         c
+                         PDC.KRunner.preproc_partition)
+                      n
+                      (Data.OldList.lines x))) -}
+b7837c0ff8d2f526cc46450c4efe08ad
+  preproc1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "&include&"#) -}
+835d3974d327baafea2801d0994f16c0
+  preproc_partition ::
+    [GHC.Types.Char]
+    -> Data.Either.Either [GHC.Types.Char] [GHC.Types.Char]
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (a :: [GHC.Types.Char]) ->
+                 case Data.OldList.isInfixOf
+                        @ GHC.Types.Char
+                        GHC.Classes.$fEqChar
+                        PDC.KRunner.preproc1
+                        a of wild {
+                   GHC.Types.False
+                   -> Data.Either.Right @ [GHC.Types.Char] @ [GHC.Types.Char] a
+                   GHC.Types.True
+                   -> Data.Either.Left @ [GHC.Types.Char] @ [GHC.Types.Char] a }) -}
+fc417867fc575db0efab4aed7b233012
+  procconf ::
+    [GHC.Base.String] -> [(GHC.Base.String, GHC.Base.String)]
+  {- Arity: 1,
+     Unfolding: (GHC.Base.map
+                   @ GHC.Base.String
+                   @ (GHC.Base.String, GHC.Base.String)
+                   PDC.KRunner.procconf1) -}
+7510fb7f93224090beba8dfbcdf1fc7f
+  procconf1 :: GHC.Base.String -> (GHC.Base.String, GHC.Base.String)
+  {- Arity: 1, Strictness: <S,1*U>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: GHC.Base.String) ->
+                 PDC.KRunner.procconf_cut (GHC.Types.[] @ GHC.Types.Char, x)) -}
+b600a5142b3addbd6a349925aeb11668
+  procconf_cut ::
+    (GHC.Base.String, GHC.Base.String)
+    -> (GHC.Base.String, GHC.Base.String)
+  {- Arity: 1, Strictness: <S(LS),1*U(U,1*U)>m, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: (GHC.Base.String, GHC.Base.String)) ->
+                 case w of ww { (,) ww1 ww2 ->
+                 case PDC.KRunner.$wcut ww1 ww2 of ww3 { (#,#) ww4 ww5 ->
+                 (ww4, ww5) } }) -}
+abc26ffdc3d925579f3639d02e29eff4
+  process ::
+    [Data.Either.Either GHC.Base.String GHC.Base.String]
+    -> [(GHC.Base.String, GHC.Base.String)] -> [GHC.Base.String]
+  {- Arity: 2, Strictness: <S,1*U><L,U> -}
+819eba3b0759b05596a32a8d637096a7
+  readIncludes ::
+    [(GHC.Base.String, GHC.Base.String)]
+    -> GHC.Types.IO [(GHC.Base.String, GHC.Base.String)]
+  {- Unfolding: (Data.Traversable.$fTraversable[]_$cmapM
+                   @ GHC.Types.IO
+                   @ (GHC.Base.String, GHC.IO.FilePath)
+                   @ (GHC.Base.String, GHC.Base.String)
+                   GHC.Base.$fMonadIO
+                   PDC.KRunner.readIncludes1
+                     `cast`
+                   (<(GHC.Base.String, GHC.IO.FilePath)>_R
+                    ->_R Sym (GHC.Types.N:IO[0]
+                                  <(GHC.Base.String, GHC.Base.String)>_R))) -}
+492fbcdbaa79a104f251de9df38a82de
+  readIncludes1 ::
+    (GHC.Base.String, GHC.IO.FilePath)
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          (GHC.Base.String, GHC.Base.String) #)
+  {- Arity: 2,
+     Unfolding: (\ (ds1 :: (GHC.Base.String, GHC.IO.FilePath))
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case ds1 of wild { (,) ik iv ->
+                 case GHC.IO.Handle.FD.openFile1
+                        iv
+                        GHC.IO.IOMode.ReadMode
+                        eta of ds2 { (#,#) ipv ipv2 ->
+                 case GHC.IO.Handle.Text.hGetContents1
+                        ipv2
+                        ipv of ds3 { (#,#) ipv1 ipv3 ->
+                 (# ipv1,
+                    (ik,
+                     PDC.KFormat.kFormat_go1
+                       (PDC.KFormat.gen
+                          PDC.KFormat.genKFormat
+                          (Language.PDC.Parser.Token.$wgo
+                             Language.PDC.Parser.Token.alexStartPos
+                             Language.PDC.Parser.Token.printTokens2
+                             (GHC.Types.[] @ Language.PDC.Parser.Token.Byte)
+                             ipv3))) #) } } }) -}
+d22cb39d6096ae8f83f550cf563d0674
+  readXML :: GHC.IO.FilePath -> GHC.Types.IO PDC.KRunner.XML
+  {- Arity: 2, Strictness: <L,U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                PDC.KRunner.readXML1
+                  `cast`
+                (<GHC.IO.FilePath>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <PDC.KRunner.XML>_R)) -}
+51954802b744ce9e374fef79e877bb4a
+  readXML1 ::
+    GHC.IO.FilePath
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, PDC.KRunner.XML #)
+  {- Arity: 2, Strictness: <L,U><S,U>,
+     Unfolding: (\ (fn :: GHC.IO.FilePath)
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.IO.Handle.FD.openFile1
+                        fn
+                        GHC.IO.IOMode.ReadMode
+                        eta of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.IO.Handle.Text.hGetContents1
+                        ipv1
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 case Control.DeepSeq.$fNFDataArray_$crnf1
+                        @ GHC.Types.Char
+                        Control.DeepSeq.$fNFDataChar_$crnf
+                          `cast`
+                        (Sym (Control.DeepSeq.N:NFData[0] <GHC.Types.Char>_N))
+                        ipv3 of wild { () ->
+                 case GHC.IO.Handle.hClose1 ipv1 ipv2 of ds3 { (#,#) ipv4 ipv5 ->
+                 (# ipv4,
+                    case Text.XML.Expat.Tree.$wsaxToTree
+                           @ GHC.Base.String
+                           @ GHC.Base.String
+                           Text.XML.Expat.SAX.$fGenericXMLString[]
+                           (Text.XML.Expat.SAX.parseG
+                              @ GHC.Base.String
+                              @ GHC.Base.String
+                              @ []
+                              Text.XML.Expat.SAX.$fGenericXMLString[]
+                              Text.XML.Expat.SAX.$fGenericXMLString[]
+                              Data.List.Class.$fList[]
+                              (Text.XML.Expat.SAX.defaultParseOptions
+                                 @ GHC.Base.String
+                                 @ GHC.Base.String)
+                              (Data.ByteString.Lazy.toChunks_go1
+                                 (Data.ByteString.Lazy.Internal.$wpackChunks1
+                                    32#
+                                    ipv3))) of ww { (#,#) ww1 ww2 ->
+                    ww1 `cast` (Sym (PDC.KRunner.N:XML[0])) } #) } } } }) -}
+4310aa4e964dbbfd3d76efd6e0f116cf
+  run ::
+    PDC.KRunner.Conf
+    -> GHC.Base.String -> GHC.Types.IO a -> GHC.Types.IO ()
+  {- Arity: 4,
+     Strictness: <S(LLLLC(C(S(SL)))L),1*U(A,A,A,A,C(C1(U(U,U))),A)><L,U><L,1*C1(U(U,A))><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                PDC.KRunner.run1
+                  `cast`
+                (forall (a :: <*>_N).
+                 <PDC.KRunner.Conf>_R
+                 ->_R <GHC.Base.String>_R
+                 ->_R <GHC.Types.IO a>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
+ac2a08c071739df5ca5bbee511584808
+  run1 ::
+    PDC.KRunner.Conf
+    -> GHC.Base.String
+    -> GHC.Types.IO a
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 4,
+     Strictness: <S(LLLLC(C(S(SL)))L),1*U(A,A,A,A,C(C1(U(U,U))),A)><L,U><L,1*C1(U(U,A))><S,U>,
+     Unfolding: InlineRule (4, True, False)
+                (\ @ a
+                   (conf :: PDC.KRunner.Conf)
+                   (msg :: GHC.Base.String)
+                   (m :: GHC.Types.IO a)
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case conf of wild { PDC.KRunner.Conf ds1 ds2 ds3 ds4 ds5 ds6 ->
+                 case (ds5 msg) `cast` (GHC.Types.N:IO[0] <()>_R)
+                        s of ds7 { (#,#) ipv ipv1 ->
+                 case m `cast` (GHC.Types.N:IO[0] <a>_R)
+                        ipv of ds8 { (#,#) ipv2 ipv3 ->
+                 (ds5 PDC.KRunner.run2) `cast` (GHC.Types.N:IO[0] <()>_R)
+                   ipv2 } } }) -}
+94860dc104dd70c4d2445e1a22aea842
+  run2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "done"#) -}
+3c9b8784a15a88223dcb9d6b00aef3dd
+  runCmd ::
+    PDC.KRunner.Conf
+    -> PDC.KRunner.Format
+    -> GHC.Base.String
+    -> GHC.Base.String
+    -> GHC.Types.IO
+         (GHC.Types.Bool, Text.XML.Expat.Tree.UNode GHC.Base.String,
+          GHC.Base.String, GHC.Base.String)
+  {- Arity: 5,
+     Strictness: <S(LLLC(C(S(SL)))LL),1*U(A,A,A,1*C1(C1(U(U,A))),C(C1(U(U,A))),A)><L,1*U><L,U><L,U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                PDC.KRunner.runCmd1
+                  `cast`
+                (<PDC.KRunner.Conf>_R
+                 ->_R <PDC.KRunner.Format>_R
+                 ->_R <GHC.Base.String>_R
+                 ->_R <GHC.Base.String>_R
+                 ->_R Sym (GHC.Types.N:IO[0]
+                               <(GHC.Types.Bool, Text.XML.Expat.Tree.UNode GHC.Base.String,
+                                 GHC.Base.String, GHC.Base.String)>_R)) -}
+0615fb5c9900466033328f4307d40fa6
+  runCmd1 ::
+    PDC.KRunner.Conf
+    -> PDC.KRunner.Format
+    -> GHC.Base.String
+    -> GHC.Base.String
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          (GHC.Types.Bool, Text.XML.Expat.Tree.UNode GHC.Base.String,
+           GHC.Base.String, GHC.Base.String) #)
+  {- Arity: 5,
+     Strictness: <S(LLLC(C(S(SL)))LL),1*U(A,A,A,1*C1(C1(U(U,A))),C(C1(U(U,A))),A)><L,1*U><L,U><L,U><S,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (5, True, False)
+                (\ (w :: PDC.KRunner.Conf)
+                   (w1 :: PDC.KRunner.Format)
+                   (w2 :: GHC.Base.String)
+                   (w3 :: GHC.Base.String)
+                   (w4 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case w of ww { PDC.KRunner.Conf ww1 ww2 ww3 ww4 ww5 ww6 ->
+                 PDC.KRunner.$wrunCmd ww4 ww5 w1 w2 w3 w4 }) -}
+99b6e828dcc33d829c3c32b283914e08
+  run_k_debug :: PDC.KRunner.Conf -> GHC.Types.Bool
+  RecSel Left PDC.KRunner.Conf
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLS),1*U(A,A,A,A,A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds1 :: PDC.KRunner.Conf) ->
+                 case ds1 of wild { PDC.KRunner.Conf ds2 ds3 ds4 ds5 ds6 ds7 ->
+                 ds7 }) -}
+a9da342b7e3630588e4c9b6a60325e3f
+  work :: [GHC.Base.String] -> GHC.Types.IO ()
+  {- Arity: 2, Strictness: <S,1*U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                PDC.KRunner.krunnerMain2
+                  `cast`
+                (<[GHC.Base.String]>_R ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
+instance GHC.Classes.Eq [PDC.KRunner.XML] = PDC.KRunner.$fEqXML
+instance GHC.Show.Show [PDC.KRunner.XML] = PDC.KRunner.$fShowXML
+"SPEC/PDC.KRunner $fEqNodeG_$c/= @ [Char] @ [Char]" [ALWAYS] forall ($dEq1 :: GHC.Classes.Eq
+                                                                                [GHC.Types.Char])
+                                                                    ($dEq :: GHC.Classes.Eq
+                                                                               [GHC.Types.Char])
+  Text.XML.Expat.Tree.$fEqNodeG_$c/= @ [GHC.Types.Char]
+                                     @ [GHC.Types.Char]
+                                     $dEq
+                                     $dEq1
+  = PDC.KRunner.$fEqXML_$s$fEqNodeG_$c/=
+"SPEC/PDC.KRunner $fNodeClassNodeGc @ []" [ALWAYS] forall ($dList :: Data.List.Class.List
+                                                                       [])
+                                                          ($dFunctor :: GHC.Base.Functor [])
+  Text.XML.Expat.Tree.$fNodeClassNodeGc @ [] $dFunctor $dList
+  = PDC.KRunner.$s$fNodeClassNodeGc
+"SPEC/PDC.KRunner $fNodeClassNodeGc_$cgetAttributes @ []" [ALWAYS] forall ($dList :: Data.List.Class.List
+                                                                                       [])
+                                                                          ($dFunctor :: GHC.Base.Functor
+                                                                                          [])
+  Text.XML.Expat.Tree.$fNodeClassNodeGc_$cgetAttributes @ []
+                                                        $dFunctor
+                                                        $dList
+  = PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cgetAttributes
+"SPEC/PDC.KRunner $fNodeClassNodeGc_$cgetChildren @ []" [ALWAYS] forall ($dList :: Data.List.Class.List
+                                                                                     [])
+                                                                        ($dFunctor :: GHC.Base.Functor
+                                                                                        [])
+  Text.XML.Expat.Tree.$fNodeClassNodeGc_$cgetChildren @ []
+                                                      $dFunctor
+                                                      $dList
+  = PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cgetChildren
+"SPEC/PDC.KRunner $fNodeClassNodeGc_$cgetName @ []" [ALWAYS] forall ($dList :: Data.List.Class.List
+                                                                                 [])
+                                                                    ($dFunctor :: GHC.Base.Functor
+                                                                                    [])
+  Text.XML.Expat.Tree.$fNodeClassNodeGc_$cgetName @ []
+                                                  $dFunctor
+                                                  $dList
+  = PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cgetName
+"SPEC/PDC.KRunner $fNodeClassNodeGc_$cgetTarget @ []" [ALWAYS] forall ($dList :: Data.List.Class.List
+                                                                                   [])
+                                                                      ($dFunctor :: GHC.Base.Functor
+                                                                                      [])
+  Text.XML.Expat.Tree.$fNodeClassNodeGc_$cgetTarget @ []
+                                                    $dFunctor
+                                                    $dList
+  = PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cgetTarget
+"SPEC/PDC.KRunner $fNodeClassNodeGc_$cgetText @ []" [ALWAYS] forall ($dList :: Data.List.Class.List
+                                                                                 [])
+                                                                    ($dFunctor :: GHC.Base.Functor
+                                                                                    [])
+  Text.XML.Expat.Tree.$fNodeClassNodeGc_$cgetText @ []
+                                                  $dFunctor
+                                                  $dList
+  = PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cgetText
+"SPEC/PDC.KRunner $fNodeClassNodeGc_$chasTarget @ []" [ALWAYS] forall ($dList :: Data.List.Class.List
+                                                                                   [])
+                                                                      ($dFunctor :: GHC.Base.Functor
+                                                                                      [])
+  Text.XML.Expat.Tree.$fNodeClassNodeGc_$chasTarget @ []
+                                                    $dFunctor
+                                                    $dList
+  = PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$chasTarget
+"SPEC/PDC.KRunner $fNodeClassNodeGc_$cisComment @ []" [ALWAYS] forall ($dList :: Data.List.Class.List
+                                                                                   [])
+                                                                      ($dFunctor :: GHC.Base.Functor
+                                                                                      [])
+  Text.XML.Expat.Tree.$fNodeClassNodeGc_$cisComment @ []
+                                                    $dFunctor
+                                                    $dList
+  = PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cisComment
+"SPEC/PDC.KRunner $fNodeClassNodeGc_$cisElement @ []" [ALWAYS] forall ($dList :: Data.List.Class.List
+                                                                                   [])
+                                                                      ($dFunctor :: GHC.Base.Functor
+                                                                                      [])
+  Text.XML.Expat.Tree.$fNodeClassNodeGc_$cisElement @ []
+                                                    $dFunctor
+                                                    $dList
+  = PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cisElement
+"SPEC/PDC.KRunner $fNodeClassNodeGc_$cisNamed @ []" [ALWAYS] forall ($dList :: Data.List.Class.List
+                                                                                 [])
+                                                                    ($dFunctor :: GHC.Base.Functor
+                                                                                    [])
+  Text.XML.Expat.Tree.$fNodeClassNodeGc_$cisNamed @ []
+                                                  $dFunctor
+                                                  $dList
+  = PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cisNamed
+"SPEC/PDC.KRunner $fNodeClassNodeGc_$cisText @ []" [ALWAYS] forall ($dList :: Data.List.Class.List
+                                                                                [])
+                                                                   ($dFunctor :: GHC.Base.Functor
+                                                                                   [])
+  Text.XML.Expat.Tree.$fNodeClassNodeGc_$cisText @ []
+                                                 $dFunctor
+                                                 $dList
+  = PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cisText
+"SPEC/PDC.KRunner $fNodeClassNodeGc_$cmkText @ []" [ALWAYS] forall ($dList :: Data.List.Class.List
+                                                                                [])
+                                                                   ($dFunctor :: GHC.Base.Functor
+                                                                                   [])
+  Text.XML.Expat.Tree.$fNodeClassNodeGc_$cmkText @ []
+                                                 $dFunctor
+                                                 $dList
+  = PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cmkText
+"SPEC/PDC.KRunner $fNodeClassNodeGc_$cmodifyAttributes @ []" [ALWAYS] forall ($dList :: Data.List.Class.List
+                                                                                          [])
+                                                                             ($dFunctor :: GHC.Base.Functor
+                                                                                             [])
+  Text.XML.Expat.Tree.$fNodeClassNodeGc_$cmodifyAttributes @ []
+                                                           $dFunctor
+                                                           $dList
+  = PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cmodifyAttributes
+"SPEC/PDC.KRunner $fNodeClassNodeGc_$cmodifyChildren @ []" [ALWAYS] forall ($dList :: Data.List.Class.List
+                                                                                        [])
+                                                                           ($dFunctor :: GHC.Base.Functor
+                                                                                           [])
+  Text.XML.Expat.Tree.$fNodeClassNodeGc_$cmodifyChildren @ []
+                                                         $dFunctor
+                                                         $dList
+  = PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cmodifyChildren
+"SPEC/PDC.KRunner $fNodeClassNodeGc_$cmodifyElement @ []" [ALWAYS] forall ($dList :: Data.List.Class.List
+                                                                                       [])
+                                                                          ($dFunctor :: GHC.Base.Functor
+                                                                                          [])
+  Text.XML.Expat.Tree.$fNodeClassNodeGc_$cmodifyElement @ []
+                                                        $dFunctor
+                                                        $dList
+  = PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cmodifyElement
+"SPEC/PDC.KRunner $fNodeClassNodeGc_$cmodifyName @ []" [ALWAYS] forall ($dList :: Data.List.Class.List
+                                                                                    [])
+                                                                       ($dFunctor :: GHC.Base.Functor
+                                                                                       [])
+  Text.XML.Expat.Tree.$fNodeClassNodeGc_$cmodifyName @ []
+                                                     $dFunctor
+                                                     $dList
+  = PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cmodifyName
+"SPEC/PDC.KRunner $fNodeClassNodeGc_$cp1NodeClass @ []" [ALWAYS] forall ($dList :: Data.List.Class.List
+                                                                                     [])
+                                                                        ($dFunctor :: GHC.Base.Functor
+                                                                                        [])
+  Text.XML.Expat.Tree.$fNodeClassNodeGc_$cp1NodeClass @ []
+                                                      $dFunctor
+                                                      $dList
+  = PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cp1NodeClass
+"SPEC/PDC.KRunner $fNodeClassNodeGc_$cp2NodeClass @ []" [ALWAYS] forall ($dList :: Data.List.Class.List
+                                                                                     [])
+                                                                        ($dFunctor :: GHC.Base.Functor
+                                                                                        [])
+  Text.XML.Expat.Tree.$fNodeClassNodeGc_$cp2NodeClass @ []
+                                                      $dFunctor
+                                                      $dList
+  = PDC.KRunner.$s$fNodeClassNodeGc_$s$fNodeClassNodeGc_$cp2NodeClass
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+
